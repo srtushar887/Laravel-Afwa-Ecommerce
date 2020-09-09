@@ -48,7 +48,18 @@
                         <li><a href="{{route('home')}}">My Account</a></li>
                         <li><a href="{{route('my.cart')}}">My Cart</a></li>
                         <li><a href="{{route('checkout')}}">Checkout</a></li>
+                        @guest
                         <li><a href="{{route('login')}}">Login</a></li>
+                        @else
+                        <li><a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Logout</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                        @endguest
                     </ul>
                 </div>
                 <!-- /.cnt-account -->
@@ -242,8 +253,8 @@
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li class="first"><a href="#" title="Contact us">My Account</a></li>
-                            <li><a href="#" title="About us">Order History</a></li>
+                            <li class="first"><a href="{{route('home')}}" title="Contact us">My Account</a></li>
+                            <li><a href="{{route('my.orders')}}" title="About us">Order History</a></li>
                             <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
                         </ul>
                     </div>
@@ -259,11 +270,11 @@
 
                     <div class="module-body">
                         <ul class='list-unstyled'>
-                            <li class="first"><a title="Your Account" href="#">Home</a></li>
-                            <li class="first"><a title="Your Account" href="#">All Products</a></li>
-                            <li><a title="Information" href="#">About Us</a></li>
-                            <li><a title="Information" href="#">Blog</a></li>
-                            <li><a title="Addresses" href="#">Contact Us</a></li>
+                            <li class="first"><a title="Your Account" href="{{route('front')}}">Home</a></li>
+                            <li class="first"><a title="Your Account" href="{{route('all.products')}}">All Products</a></li>
+                            <li><a title="Information" href="{{route('about.us')}}">About Us</a></li>
+                            <li><a title="Information" href="{{route('about.us')}}">Blog</a></li>
+                            <li><a title="Addresses" href="{{route('contact.us')}}">Contact Us</a></li>
                         </ul>
                     </div>
                     <!-- /.module-body -->

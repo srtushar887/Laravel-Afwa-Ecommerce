@@ -370,7 +370,7 @@
 
                     },
                     success:function(data){
-
+                        $("html, body").animate({ scrollTop: 100 }, "slow");
                         var count = data.notices.total;
                         var found = `${count} Product Found`;
                         $('.product_found').empty().append(found);

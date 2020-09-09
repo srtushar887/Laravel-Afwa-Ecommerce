@@ -20,6 +20,8 @@ Route::get('/middle-category/{id}', 'FrontendController@middle_category_products
 Route::get('/about-us', 'FrontendController@about_us')->name('about.us');
 Route::get('/blogs', 'FrontendController@blogs')->name('blogs');
 Route::get('/blog-details/{id}', 'FrontendController@blog_details')->name('blog.details');
+Route::post('/blog-comment-save', 'FrontendController@blog_comment_save')->name('blog.comment.save');
+Route::get('/blog-search', 'FrontendController@blog_search')->name('search.blog');
 Route::get('/contact-us', 'FrontendController@contact_us')->name('contact.us');
 Route::get('/product-details/{id}', 'FrontendController@product_details')->name('product.details');
 Route::post('/add-to-cart-single', 'FrontendController@add_to_cart_single')->name('add.to.cart.single');
@@ -41,6 +43,10 @@ Route::get('/product-filters', 'FrontendFilterController@product_filtes_get');
 //social login
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
+
+//forgot password
+Route::get('/forgot-password', 'VisitorController@forgot_password')->name('forgot.password');
+Route::post('/forgot-password-submit', 'VisitorController@forgot_password_submit')->name('forgot.password.submit');
 
 
 Auth::routes();

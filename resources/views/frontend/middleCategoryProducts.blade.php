@@ -355,7 +355,7 @@
                 var mid_cat = get_filter('mid_category');
                 var end_cat = get_filter('end_category');
                 var brand = get_filter('brands');
-
+                $('.loading').show();
                 $.ajax({
                     type : "POST",
                     url: "{{route('get_filter_alls_product')}}",
@@ -368,11 +368,23 @@
 
                     },
                     success:function(data){
-                        $('.products').hide();
-                        $('.loading').show();
-                        $('.products').empty().append(data.view)
-                        $('.products').show();
-                        $('.loading').hide();
+                        $("html, body").animate({ scrollTop: 100 }, "slow");
+                        var count = data.notices.total;
+                        var found = `${count} Product Found`;
+                        $('.product_found').empty().append(found);
+
+                        if (count > 0){
+                            $('.products').hide();
+                            $('.products').empty().append(data.view)
+                            $('.products').show();
+                            $('.loading').hide();
+                        }else {
+                            var no_pro = `Sorry! No Product Available`
+                            $('.products').hide();
+                            $('.products').empty().append(no_pro)
+                            $('.products').show();
+                            $('.loading').hide();
+                        }
                     }
                 });
             }
@@ -430,7 +442,6 @@
                 }).done(function(data){
                 // console.log(data)
                 $('.products').hide();
-                $('.loading').show();
                 $('.products').empty().append(data.view)
                 $('.products').show();
                 $('.loading').hide();

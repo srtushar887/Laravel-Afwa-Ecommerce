@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\blog;
 use App\blog_category;
+use App\blog_comment;
 use App\brand;
 use App\contact_us_data;
 use App\end_category;
@@ -86,8 +87,38 @@ class FrontendController extends Controller
     {
         $blogs = blog::where('id',$id)->first();
         $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
-        return view('frontend.blogDetails',compact('blogs','blog_categories'));
+        $blog_comments = blog_comment::where('blog_id',$id)->orderBy('id','desc')->get();
+        return view('frontend.blogDetails',compact('blogs','blog_categories','blog_comments'));
     }
+
+
+    public function blog_comment_save(Request $request)
+    {
+        $this->validate($request,[
+           'name' => 'required',
+           'comment' => 'required',
+        ]);
+
+        $new_blog_comment = new blog_comment();
+        $new_blog_comment->blog_id = $request->blog_id;
+        $new_blog_comment->name = $request->name;
+        $new_blog_comment->comment = $request->comment;
+        $new_blog_comment->save();
+        return back()->with('success','Blog Comment Successfully Created');
+
+
+    }
+
+
+    public function blog_search(Request $request)
+    {
+        $search = $request->search;
+        $blogs = blog::where('blog_title','LIKE',"%$search%")->orderBy('id','desc')->paginate(3);
+        $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
+        return view('frontend.blogSearch',compact('blogs','blog_categories','search'));
+    }
+
+
 
 
     public function contact_us()

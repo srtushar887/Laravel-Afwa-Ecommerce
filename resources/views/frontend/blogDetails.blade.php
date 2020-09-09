@@ -23,7 +23,17 @@
                             <img class="img-responsive" src="{{asset($blogs->blog_image)}}" style="height: 400px;width: 100%" alt="">
                             <h1>{!! $blogs->blog_title !!}</h1>
                             <span class="author">Admin</span>
-                            <span class="review">7 Comments</span>
+                            <?php
+                            $blog_comment_count = \App\blog_comment::where('blog_id',$blogs->id)->count();
+                            ?>
+                            <span class="review">
+                                @if ($blog_comment_count <= 1)
+                                    {{$blog_comment_count}} Comment
+                                @else
+                                    {{$blog_comment_count}} Comments
+                                @endif
+
+                            </span>
                             <?php
 
                             $date = \Carbon\Carbon::now();
@@ -34,66 +44,60 @@
                         </div>
                         <div class="blog-post-author-details wow fadeInUp">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <img src="https://images-na.ssl-images-amazon.com/images/I/51e6kpkyuIL._AC_SX466_.jpg" alt="Responsive image" class="img-circle img-responsive">
+                                @foreach($blog_comments as $bcom)
+                                <div class="col-md-12">
+                                    <h4>{{$bcom->name}}</h4>
+                                    <?php
+
+                                    $date = \Carbon\Carbon::now();
+                                    $times = strtotime($bcom->created_at)
+                                    ?>
+                                    <span class="author-job">{{date('F j, Y, g:i a',$times )}}</span>
+                                    <p>{!! $bcom->comment !!}</p>
+
                                 </div>
-                                <div class="col-md-10">
-                                    <h4>John Doe</h4>
-                                    <span class="author-job">Web Designer</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
 
                         <div class="blog-write-comment outer-bottom-xs outer-top-xs">
+                           <form action="{{route('blog.comment.save')}}" method="post">
+                               @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <h4>Leave A Comment</h4>
                                 </div>
-                                <div class="col-md-4">
-                                    <form class="register-form" role="form">
+                                @include('layouts.error')
+                                <div class="col-md-12">
+
                                         <div class="form-group">
                                             <label class="info-title" for="exampleInputName">Your Name <span>*</span></label>
-                                            <input type="email" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="">
+                                            <input type="text" name="name" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="">
+                                            <input type="hidden" name="blog_id" value="{{$blogs->id}}" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="">
                                         </div>
-                                    </form>
-                                </div>
-                                <div class="col-md-4">
-                                    <form class="register-form" role="form">
-                                        <div class="form-group">
-                                            <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                            <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-md-4">
-                                    <form class="register-form" role="form">
-                                        <div class="form-group">
-                                            <label class="info-title" for="exampleInputTitle">Title <span>*</span></label>
-                                            <input type="email" class="form-control unicase-form-control text-input" id="exampleInputTitle" placeholder="">
-                                        </div>
-                                    </form>
+
                                 </div>
                                 <div class="col-md-12">
-                                    <form class="register-form" role="form">
                                         <div class="form-group">
                                             <label class="info-title" for="exampleInputComments">Your Comments <span>*</span></label>
-                                            <textarea class="form-control unicase-form-control" id="exampleInputComments" ></textarea>
+                                            <textarea class="form-control unicase-form-control" name="comment" id="exampleInputComments" ></textarea>
                                         </div>
-                                    </form>
+
                                 </div>
                                 <div class="col-md-12 outer-bottom-small m-t-20">
                                     <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Submit Comment</button>
                                 </div>
                             </div>
+                           </form>
                         </div>
                     </div>
                     <div class="col-md-3 sidebar">
                         <div class="sidebar-module-container">
                             <div class="search-area outer-bottom-small">
-                                <form>
+                                <form action="{{route('search.blog')}}" method="get">
+                                    @csrf
                                     <div class="control-group">
-                                        <input placeholder="Type to search" class="search-field">
+                                        <input placeholder="Type to search" name="search"  class="search-field">
                                         <a href="#" class="search-button"></a>
                                     </div>
                                 </form>
