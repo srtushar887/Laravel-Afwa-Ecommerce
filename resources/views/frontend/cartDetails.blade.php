@@ -50,10 +50,12 @@
                                 $counts = \Gloudemans\Shoppingcart\Facades\Cart::content()->count();
                                 ?>
                                 @foreach($carts as $crt)
+                                <form action="{{route('mycart.update')}}" method="post">
+                                    @csrf
                                 <tr>
                                     <td class="romove-item">
-                                        <a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a> |
-                                        <a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a>
+                                        <a href="{{route('add.to.cart.delete.single',$crt->rowId)}}" title="cancel" class="icon"><button class="btn btn-success btn-sm"><i class="fa fa-trash-o"></i></button></a> |
+                                        <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> </button>
                                     </td>
                                     <td class="cart-image">
                                         <a class="entry-thumbnail" href="detail.html">
@@ -64,19 +66,47 @@
                                         <h4 class='cart-product-description'><a href="detail.html">{{$crt->name}}</a></h4>
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <div class="rating rateit-small"></div>
+                                                <?php
+
+                                                $rating = \App\product_review::where('product_review_id',$crt->id)->sum('quality');
+                                                $rating_count = \App\product_review::where('product_review_id',$crt->id)->count();
+                                                $rat = ($rating * 5  ) /100;
+                                                ?>
+                                                    @if ($rating_count > 0)
+                                                        @for ($i = 0; $i < $rat; $i++)
+                                                            <span class="fa fa-star checked" style="color: orange"></span>
+                                                        @endfor
+                                                    @else
+                                                        No Review
+                                                    @endif
                                             </div>
                                             <div class="col-sm-8">
                                                 <div class="reviews">
-                                                    (06 Reviews)
+                                                    @if ($rating_count <= 1)
+                                                        ({{$rating_count}} Review)
+                                                    @else
+                                                        ({{$rating_count}} Reviews)
+                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- /.row -->
                                         <div class="cart-product-info">
-                                            <span class="product-color">COLOR:<span>Blue</span></span>
-                                            <br>
-                                            <span class="product-color">COLOR:<span>Blue</span></span>
+                                            <?php
+                                                $color = \App\color::where('id',$crt->options->color)->first();
+                                            ?>
+                                            @if ($color)
+                                                    <span class="product-color">COLOR:<span>{{$color->color_name}}</span></span>
+                                            @endif
+                                                <br>
+                                                <?php
+                                                $size = \App\size::where('id',$crt->options->size)->first();
+                                                ?>
+                                                @if ($size)
+                                                    <span class="product-color">Size:<span>{{$size->size_name}}</span></span>
+                                                @endif
+
                                         </div>
                                     </td>
                                     <td class="cart-product-quantity">
@@ -85,11 +115,13 @@
                                                 <div class="arrow plus gradient"><span class="ir"><i class="icon fa fa-sort-asc"></i></span></div>
                                                 <div class="arrow minus gradient"><span class="ir"><i class="icon fa fa-sort-desc"></i></span></div>
                                             </div>
-                                            <input type="text" value="{{$crt->qty}}">
+                                            <input type="text" name="qty" value="{{$crt->qty}}">
+                                            <input type="hidden" name="update_id" value="{{$crt->rowId}}">
                                         </div>
                                     </td>
-                                    <td class="cart-product-sub-total"><span class="cart-sub-total-price">${{$crt->subtotal()}}</span></td>
+                                    <td class="cart-product-sub-total"><span class="cart-sub-total-price">{{$gn->site_currency}}{{$crt->subtotal()}}</span></td>
                                 </tr>
+                                </form>
                                 @endforeach
 
                                 </tbody>
@@ -114,7 +146,7 @@
                             <tr>
                                 <th>
                                     <div class="cart-sub-total">
-                                        Subtotal<span class="inner-left-md">${{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}</span>
+                                        Subtotal<span class="inner-left-md">{{$gn->site_currency}}{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}</span>
                                     </div>
                                 </th>
                             </tr>

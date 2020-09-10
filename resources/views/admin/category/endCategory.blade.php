@@ -21,8 +21,14 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Hoverable rows</h4>
-
+                    <nav class="navbar navbar-light bg-light justify-content-between">
+                        <a class="navbar-brand">Category List</a>
+                        <form class="form-inline" action="{{route('admin.search.end.category')}}" method="get">
+                            @csrf
+                            <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
                     <div class="table-responsive">
                         <table class="table table-hover mb-0">
                             <thead>
@@ -141,6 +147,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{$end_cats->links()}}
                     </div>
                 </div>
                 <!-- end card-body-->

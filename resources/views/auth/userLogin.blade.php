@@ -44,7 +44,7 @@
 
                         <div class="social-sign-in outer-top-xs">
                             <a href="{{ url('/auth/redirect/facebook') }}" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
-                            <a href="{{ url('/auth/redirect/google') }}" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
+                            <a href="{{ url('/auth/redirect/google') }}" class="twitter-sign-in"><i class="fa fa-google"></i> Sign In with Twitter</a>
                         </div>
 
                     </div>

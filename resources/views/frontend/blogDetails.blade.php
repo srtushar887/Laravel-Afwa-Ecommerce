@@ -113,7 +113,7 @@
                                         @foreach($blog_categories as $bcts)
                                             <div class="accordion-group">
                                                 <div class="accordion-heading">
-                                                    <a href="#collapseOne" data-toggle="collapse" class="accordion-toggle collapsed">
+                                                    <a href="{{route('blog.category.view',$bcts->id)}}"  class="accordion-toggle collapsed">
                                                         {{$bcts->category_name}}
                                                     </a>
                                                 </div>

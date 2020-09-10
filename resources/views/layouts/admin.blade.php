@@ -149,6 +149,7 @@
                             <li><a href="{{route('admin.static.data')}}">Static Data</a></li>
                             <li><a href="{{route('admin.social.icons')}}">Social Icons</a></li>
                             <li><a href="{{route('admin.tesimonial')}}">Testimonial</a></li>
+                            <li><a href="{{route('admin.advertisement')}}">Advertisement</a></li>
                         </ul>
                     </li>
                     <li>

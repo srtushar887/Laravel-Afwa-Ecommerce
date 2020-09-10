@@ -25,7 +25,7 @@
                         <a class="navbar-brand">Color List</a>
                         <form class="form-inline" action="{{route('admin.search.color')}}" method="get">
                             @csrf
-                            <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" name="search" value="{{$search}}" type="search"  placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </nav>

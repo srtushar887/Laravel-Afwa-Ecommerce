@@ -12,7 +12,7 @@ class AdminCategoryController extends Controller
 {
     public function top_category()
     {
-        $top_cats = top_category::paginate(10);
+        $top_cats = top_category::paginate(15);
         return view('admin.category.topCategory',compact('top_cats'));
     }
 
@@ -45,7 +45,7 @@ class AdminCategoryController extends Controller
     public function top_category_search(Request $request)
     {
         $search = $request->search;
-        $top_cats = top_category::where('category_name','LIKE',"%$search%")->paginate(10);
+        $top_cats = top_category::where('category_name','LIKE',"%$search%")->paginate(15);
         return view('admin.category.topCategorySearch',compact('top_cats','search'));
     }
 
@@ -54,7 +54,7 @@ class AdminCategoryController extends Controller
     public function middle_category()
     {
         $top_cats = top_category::all();
-        $mid_cats = middle_category::all();
+        $mid_cats = middle_category::paginate(15);
         return view('admin.category.middleCategory',compact('top_cats','mid_cats'));
     }
 
@@ -85,12 +85,21 @@ class AdminCategoryController extends Controller
         return back()->with('success','Middle Category Successfully Deleted');
     }
 
+    public function middle_category_search(Request $request)
+    {
+        $search = $request->search;
+        $mid_cats = middle_category::where('category_name','LIKE',"%$search%")->paginate(15);
+        $top_cats = top_category::all();
+        return view('admin.category.midCategorySearch',compact('mid_cats','search','top_cats'));
+    }
+
+
 
     public function end_category()
     {
         $top_cats = top_category::all();
         $mid_cats = middle_category::all();
-        $end_cats = end_category::all();
+        $end_cats = end_category::paginate(15);
         return view('admin.category.endCategory',compact('top_cats','mid_cats','end_cats'));
     }
 
@@ -123,4 +132,15 @@ class AdminCategoryController extends Controller
         $delete_end_delete->delete();
         return back()->with('success','End Category Successfully Deleted');
     }
+
+
+    public function end_category_search(Request $request)
+    {
+        $search = $request->search;
+        $end_cats = middle_category::where('category_name','LIKE',"%$search%")->paginate(15);
+        $top_cats = top_category::all();
+        $mid_cats = middle_category::all();
+        return view('admin.category.endCategorySearch',compact('end_cats','search','top_cats','mid_cats'));
+    }
+
 }

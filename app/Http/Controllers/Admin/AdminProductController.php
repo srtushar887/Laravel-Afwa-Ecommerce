@@ -337,6 +337,15 @@ class AdminProductController extends Controller
     }
 
 
+    public function product_search(Request $request)
+    {
+        $search = $request->search;
+        $products = product::where('product_name','LIKE',"%$search%")->paginate(15);
+        return view('admin.product.productSearch',compact('products','search'));
+    }
+
+
+
 
 
 

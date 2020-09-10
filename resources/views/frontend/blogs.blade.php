@@ -76,7 +76,7 @@
                                        @foreach($blog_categories as $bcts)
                                         <div class="accordion-group">
                                             <div class="accordion-heading">
-                                                <a href="#collapseOne" data-toggle="collapse" class="accordion-toggle collapsed">
+                                                <a href="{{route('blog.category.view',$bcts->id)}}"  class="accordion-toggle collapsed">
                                                     {{$bcts->category_name}}
                                                 </a>
                                             </div>
@@ -92,29 +92,6 @@
                             </div>
                             <!-- /.sidebar-widget -->
                             <!-- ============================================== CATEGORY : END ============================================== -->
-                            <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
-                                <h3 class="section-title">Similar Blog</h3>
-                                <ul class="nav nav-tabs">
-                                </ul>
-                                <div class="tab-content" style="padding-left:0">
-                                    <div class="tab-pane active m-t-20" id="popular">
-                                        <div class="blog-post inner-bottom-30 " >
-                                            <img class="img-responsive" src="{{asset('assets/frontend/')}}/images/blog-post/blog_big_01.jpg" alt="">
-                                            <h4><a href="blog-details.html">Simple Blog Post</a></h4>
-                                            <span class="review">6 Comments</span>
-                                            <span class="date-time">12/06/16</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                        </div>
-                                        <div class="blog-post" >
-                                            <img class="img-responsive" src="{{asset('assets/frontend/')}}/images/blog-post/blog_big_02.jpg" alt="">
-                                            <h4><a href="blog-details.html">Simple Blog Post</a></h4>
-                                            <span class="review">6 Comments</span>
-                                            <span class="date-time">23/06/16</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- ============================================== PRODUCT TAGS ============================================== -->
                             <!-- /.sidebar-widget -->
                             <!-- ============================================== PRODUCT TAGS : END ============================================== -->

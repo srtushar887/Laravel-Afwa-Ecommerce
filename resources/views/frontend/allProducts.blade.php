@@ -247,7 +247,7 @@
                 <!-- /.sidebar -->
                 <div class='col-md-9'>
                     <!-- ========================================== SECTION – HERO ========================================= -->
-                    <input class="form-control search" placeholder="Search Here">
+                  <input class="form-control search" placeholder="Search Here">
                     <br>
                     <div class="clearfix filters-container m-t-10" style="margin-top: -2px;">
                         <div class="row">

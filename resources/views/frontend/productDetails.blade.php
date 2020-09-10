@@ -280,9 +280,9 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="price-box">
-                                                    <span class="price">${{$product->product_new_price}}</span>
+                                                    <span class="price">{{$gn->site_currency}}{{$product->product_new_price}}</span>
                                                     @if (!empty($product->product_old_price))
-                                                        <span class="price-strike">${{$product->product_old_price}}</span>
+                                                        <span class="price-strike">{{$gn->site_currency}}{{$product->product_old_price}}</span>
                                                     @endif
 
                                                 </div>
@@ -473,10 +473,10 @@
                                             <div class="description"></div>
                                             <div class="product-price">
                                        <span class="price">
-                                       ${{$relpro->product_new_price}}
+                                       {{$gn->site_currency}}{{$relpro->product_new_price}}
                                        </span>
                                                 @if (!empty($relpro->product_old_price))
-                                                    <span class="price-before-discount">${{$relpro->product_old_price}}</span>
+                                                    <span class="price-before-discount">{{$gn->site_currency}}{{$relpro->product_old_price}}</span>
                                                 @endif
 
                                             </div>

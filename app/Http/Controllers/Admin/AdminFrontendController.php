@@ -168,6 +168,74 @@ class AdminFrontendController extends Controller
     }
 
 
+    public function advertisement()
+    {
+        $adds = static_section::first();
+        return view('admin.frontend.advertisement',compact('adds'));
+    }
+
+
+    public function advertisement_update(Request $request)
+    {
+        $adds = static_section::first();
+        if($request->hasFile('add_image_one')){
+            @unlink($adds->add_image_one);
+            $image = $request->file('add_image_one');
+            $imageName = uniqid().'.'."jpg";
+            $directory = 'assets/admin/images/adds/';
+            $imgUrl1  = $directory.$imageName;
+            Image::make($image)->resize(380,848)->save($imgUrl1);
+            $adds->add_image_one = $imgUrl1;
+        }
+
+        if($request->hasFile('add_image_two')){
+            @unlink($adds->add_image_two);
+            $image = $request->file('add_image_two');
+            $imageName = uniqid().'.'."jpg";
+            $directory = 'assets/admin/images/adds/';
+            $imgUrl2  = $directory.$imageName;
+            Image::make($image)->resize(380,848)->save($imgUrl2);
+            $adds->add_image_two = $imgUrl2;
+        }
+
+        if($request->hasFile('add_image_three')){
+            @unlink($adds->add_image_three);
+            $image = $request->file('add_image_three');
+            $imageName = uniqid().'.'."jpg";
+            $directory = 'assets/admin/images/adds/';
+            $imgUrl3  = $directory.$imageName;
+            Image::make($image)->resize(380,848)->save($imgUrl3);
+            $adds->add_image_three = $imgUrl3;
+        }
+
+        if($request->hasFile('add_image_four')){
+            @unlink($adds->add_image_four);
+            $image = $request->file('add_image_four');
+            $imageName = uniqid().'.'."jpg";
+            $directory = 'assets/admin/images/adds/';
+            $imgUrl4  = $directory.$imageName;
+            Image::make($image)->resize(380,848)->save($imgUrl4);
+            $adds->add_image_four = $imgUrl4;
+        }
+
+
+        $adds->add_one_link = $request->add_one_link;
+        $adds->add_one_status = $request->add_one_status;
+        $adds->add_two_link = $request->add_two_link;
+        $adds->add_two_status = $request->add_two_status;
+        $adds->add_three_link = $request->add_three_link;
+        $adds->add_three_status = $request->add_three_status;
+        $adds->add_four_link = $request->add_four_link;
+        $adds->add_four_status = $request->add_four_status;
+        $adds->save();
+
+        return back()->with('success','Advertisement Successfully Updated');
+
+
+    }
+
+
+
 
 
 

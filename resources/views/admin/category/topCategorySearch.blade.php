@@ -109,6 +109,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{$top_cats->links()}}
                     </div>
                 </div>
                 <!-- end card-body-->

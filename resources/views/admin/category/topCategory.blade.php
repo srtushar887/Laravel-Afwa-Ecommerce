@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <nav class="navbar navbar-light bg-light justify-content-between">
                         <a class="navbar-brand">Category List</a>
-                        <form class="form-inline" action="{{route('admin.search.top,category')}}" method="get">
+                        <form class="form-inline" action="{{route('admin.search.top.category')}}" method="get">
                             @csrf
                             <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -109,6 +109,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{$top_cats->links()}}
                     </div>
                 </div>
                 <!-- end card-body-->

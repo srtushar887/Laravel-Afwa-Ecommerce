@@ -118,6 +118,14 @@ class FrontendController extends Controller
         return view('frontend.blogSearch',compact('blogs','blog_categories','search'));
     }
 
+    public function blog_category_view($id)
+    {
+        $blogs = blog::where('blog_cat_id',$id)->orderBy('id','desc')->paginate(3);
+        $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
+        return view('frontend.blogs',compact('blogs','blog_categories'));
+    }
+
+
 
 
 
@@ -212,6 +220,16 @@ class FrontendController extends Controller
    }
 
 
+   public function my_cart_update(Request $request)
+   {
+       $qt = $request->qty;
+       $id = $request->update_id;
+       Cart::update($id, $qt);
+       return back()->with('success','Cart Updated');
+   }
+
+
+
    public function cart_details()
    {
        return view('frontend.cartDetails');
@@ -252,6 +270,10 @@ class FrontendController extends Controller
        return view('frontend.searchProduct',compact('search','products','top_cats','mid_cats','end_cats','brands'));
 
    }
+
+
+
+
 
 
 

@@ -113,7 +113,7 @@
                             <div class="items-cart-inner">
                                 <div class="top-cart">  </div>
 
-                                <div class="total-price-basket"> <span class="lbl">{{$counts}} items /</span> <span class="total-price"> <span class="sign">$</span><span class="value">{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}</span> </span> </div>
+                                <div class="total-price-basket"> <span class="lbl">{{$counts}} items /</span> <span class="total-price"> <span class="sign">{{$gn->site_currency}}</span><span class="value">{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}</span> </span> </div>
                             </div>
                         </a>
                         <ul class="dropdown-menu">
@@ -128,7 +128,7 @@
                                         </div>
                                         <div class="col-xs-7">
                                             <h3 class="name"><a href="{{route('product.details',$caunt->id)}}">{{$caunt->name}}</a></h3>
-                                            <div class="price">${{$caunt->subtotal()}}</div>
+                                            <div class="price">{{$gn->site_currency}}{{$caunt->subtotal()}}</div>
                                         </div>
                                         <div class="col-xs-1 action"> <a href="{{route('add.to.cart.delete.single',$caunt->rowId)}}"><i class="fa fa-trash"></i></a> </div>
                                     </div>

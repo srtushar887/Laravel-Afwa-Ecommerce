@@ -22,10 +22,12 @@ Route::get('/blogs', 'FrontendController@blogs')->name('blogs');
 Route::get('/blog-details/{id}', 'FrontendController@blog_details')->name('blog.details');
 Route::post('/blog-comment-save', 'FrontendController@blog_comment_save')->name('blog.comment.save');
 Route::get('/blog-search', 'FrontendController@blog_search')->name('search.blog');
+Route::get('/blog-category/{id}', 'FrontendController@blog_category_view')->name('blog.category.view');
 Route::get('/contact-us', 'FrontendController@contact_us')->name('contact.us');
 Route::get('/product-details/{id}', 'FrontendController@product_details')->name('product.details');
 Route::post('/add-to-cart-single', 'FrontendController@add_to_cart_single')->name('add.to.cart.single');
 Route::get('/add-to-cart-single-delete/{id}', 'FrontendController@add_to_cart_single_delete')->name('add.to.cart.delete.single');
+Route::post('/my-cart-update', 'FrontendController@my_cart_update')->name('mycart.update');
 Route::get('/cart-details', 'FrontendController@cart_details')->name('my.cart');
 Route::get('/privacy-policy', 'FrontendController@privacy_policy')->name('privacy.policy');
 Route::get('/terms-condition', 'FrontendController@terms_condition')->name('terms.condition');
@@ -82,13 +84,14 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/top-category-save', 'Admin\AdminCategoryController@top_category_save')->name('admin.save.topcategory');
         Route::post('/top-category-update', 'Admin\AdminCategoryController@top_category_update')->name('admin.update.topcategory');
         Route::post('/top-category-delete', 'Admin\AdminCategoryController@top_category_delete')->name('admin.delete.topcategory');
-        Route::get('/top-category-search', 'Admin\AdminCategoryController@top_category_search')->name('admin.search.top,category');
+        Route::get('/top-category-search', 'Admin\AdminCategoryController@top_category_search')->name('admin.search.top.category');
 
         //middle category
         Route::get('/middle-category', 'Admin\AdminCategoryController@middle_category')->name('admin.middle.category');
         Route::post('/middle-category-save', 'Admin\AdminCategoryController@middle_category_save')->name('admin.save.middlecategory');
         Route::post('/middle-category-update', 'Admin\AdminCategoryController@middle_category_update')->name('admin.update.middlecategory');
         Route::post('/middle-category-delete', 'Admin\AdminCategoryController@middle_category_delete')->name('admin.delete.middlecategory');
+        Route::get('/middle-category-search', 'Admin\AdminCategoryController@middle_category_search')->name('admin.search.mid.category');
 
 
         //end category
@@ -96,6 +99,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/end-category-save', 'Admin\AdminCategoryController@end_category_save')->name('admin.save.endcategory');
         Route::post('/end-category-update', 'Admin\AdminCategoryController@end_category_update')->name('admin.update.endcategory');
         Route::post('/end-category-delete', 'Admin\AdminCategoryController@end_category_delete')->name('admin.delete.endcategory');
+        Route::get('/end-category-search', 'Admin\AdminCategoryController@end_category_search')->name('admin.search.end.category');
 
 
 
@@ -104,6 +108,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/brand-save', 'Admin\AdminMasterController@brand_save')->name('admin.save.brand');
         Route::post('/brand-update', 'Admin\AdminMasterController@brand_update')->name('admin.update.brand');
         Route::post('/brand-delete', 'Admin\AdminMasterController@brand_delete')->name('admin.delete.brand');
+        Route::get('/brand-search', 'Admin\AdminMasterController@brand_search')->name('admin.search.brand');
 
 
         //brand
@@ -111,6 +116,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/color-save', 'Admin\AdminMasterController@color_save')->name('admin.save.color');
         Route::post('/color-update', 'Admin\AdminMasterController@color_update')->name('admin.update.color');
         Route::post('/color-delete', 'Admin\AdminMasterController@color_delete')->name('admin.delete.color');
+        Route::get('/color-search', 'Admin\AdminMasterController@color_search')->name('admin.search.color');
 
 
         //size
@@ -118,6 +124,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/size-save', 'Admin\AdminMasterController@size_save')->name('admin.save.size');
         Route::post('/size-update', 'Admin\AdminMasterController@size_update')->name('admin.update.size');
         Route::post('/size-delete', 'Admin\AdminMasterController@size_delete')->name('admin.delete.size');
+        Route::get('/size-search', 'Admin\AdminMasterController@size_search')->name('admin.search.size');
 
 
         //product
@@ -129,6 +136,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/product-edit-size-delete', 'Admin\AdminProductController@product_edit_size_delete')->name('admin.delete.size.edit.data');
         Route::post('/product-update', 'Admin\AdminProductController@product_update')->name('admin.update.product');
         Route::post('/product-delete', 'Admin\AdminProductController@product_delete')->name('admin.delete.product');
+        Route::get('/product-search', 'Admin\AdminProductController@product_search')->name('admin.search.product');
 
         //users
         Route::get('/all-users', 'Admin\AdminUserController@all_users')->name('admin.users');
@@ -181,6 +189,10 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/testimonial-save', 'Admin\AdminFrontendController@testimonial_save')->name('admin.save.tesimonial');
         Route::post('/testimonial-update', 'Admin\AdminFrontendController@testimonial_update')->name('admin.update.tesimonial');
         Route::post('/testimonial-delete', 'Admin\AdminFrontendController@testimonial_delete')->name('admin.delete.tesimonial');
+
+        //advertisement
+        Route::get('/advertisement', 'Admin\AdminFrontendController@advertisement')->name('admin.advertisement');
+        Route::post('/advertisement-update', 'Admin\AdminFrontendController@advertisement_update')->name('admin.advertisement.update');
 
 
     });

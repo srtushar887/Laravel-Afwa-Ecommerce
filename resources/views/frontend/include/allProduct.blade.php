@@ -16,9 +16,9 @@
                                 <h3 class="name"><a href="{{route('product.details',$pro->id)}}">{{$pro->product_name}}</a></h3>
                                 <div class="rating rateit-small"></div>
                                 <div class="product-price">
-                                    <span class="price"> ${{$pro->product_new_price}} </span>
+                                    <span class="price"> {{$gn->site_currency}}{{$pro->product_new_price}} </span>
                                     @if (!empty($pro->product_old_price))
-                                        <span class="price-before-discount">${{$pro->product_old_price}}</span> </div>
+                                        <span class="price-before-discount">{{$gn->site_currency}}{{$pro->product_old_price}}</span> </div>
                                     @endif
 
                                 <!-- /.product-price -->

@@ -153,9 +153,9 @@
 
 
                                     <div class="product-price">
-                                        <span class="price"> ${{$hot_deal->product_new_price}} </span>
+                                        <span class="price"> {{$gn->site_currency}}{{$hot_deal->product_new_price}} </span>
                                         @if (!empty($hot_deal->product_old_price))
-                                            <span class="price-before-discount">${{$hot_deal->product_old_price}}</span>
+                                            <span class="price-before-discount">{{$gn->site_currency}}{{$hot_deal->product_old_price}}</span>
                                         @endif
 
                                     </div>
@@ -305,8 +305,8 @@
                                                     @endif
                                                     <div class="description"></div>
                                                     <div class="product-price">
-                                                        <span class="price"> ${{$lproduct->product_new_price}} </span>
-                                                        <span class="price-before-discount">$ {{$lproduct->product_old_price}}</span>
+                                                        <span class="price"> {{$gn->site_currency}}{{$lproduct->product_new_price}} </span>
+                                                        <span class="price-before-discount">{{$gn->site_currency}}{{$lproduct->product_old_price}}</span>
                                                         <br>
                                                         <a href="{{route('product.details',$lproduct->id)}}">
 
@@ -389,7 +389,12 @@
                                                         No Review
                                                     @endif
                                                     <div class="description"></div>
-                                                    <div class="product-price"> <span class="price"> ${{$cproduct->product_new_price}} </span> <span class="price-before-discount">$ 800</span> </div>
+                                                    <div class="product-price"> <span class="price"> {{$gn->site_currency}}{{$cproduct->product_new_price}} </span>
+                                                        @if (!empty($cproduct->product_old_price))
+                                                            <span class="price-before-discount">{{$gn->site_currency}}{{$cproduct->product_old_price}}</span>
+                                                        @endif
+
+                                                    </div>
                                                     <!-- /.product-price -->
                                                     <br>
                                                     <a href="{{route('product.details',$cproduct->id)}}">

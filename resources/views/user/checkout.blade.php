@@ -355,12 +355,12 @@
                                         ?>
                                         <ul class="nav nav-checkout-progress list-unstyled">
                                             @foreach($carts as $crt)
-                                            <li><a href="#">{{$crt->name}} </a>  {{$crt->qty}} * ${{$crt->price}}</li>
+                                            <li><a href="#">{{$crt->name}} </a>  {{$crt->qty}} * {{$gn->site_currency}}{{$crt->price}}</li>
                                             @endforeach
                                         </ul>
                                     </div>
                                     <br>
-                                    <h4>Total : ${{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}</h4>
+                                    <h4>Total : {{$gn->site_currency}}{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}</h4>
                                     <input type="hidden" name="total_am"  class="total_amount" value="{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}">
                                 </div>
                             </div>

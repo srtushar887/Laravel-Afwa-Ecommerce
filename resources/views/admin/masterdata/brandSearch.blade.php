@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0 font-size-18">Color</h4>
+                <h4 class="mb-0 font-size-18">Brand</h4>
 
                 <div class="page-title-right">
-                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#createColor">Create New</button>
+                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#createBrand">Create New</button>
                 </div>
 
             </div>
@@ -22,10 +22,10 @@
             <div class="card">
                 <div class="card-body">
                     <nav class="navbar navbar-light bg-light justify-content-between">
-                        <a class="navbar-brand">Color List</a>
-                        <form class="form-inline" action="{{route('admin.search.color')}}" method="get">
+                        <a class="navbar-brand">Brand List</a>
+                        <form class="form-inline" action="{{route('admin.search.brand')}}" method="get">
                             @csrf
-                            <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" name="search" value="{{$search}}" type="search"  placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </nav>
@@ -38,17 +38,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($colors as $color)
+                            @foreach($brands as $brand)
                                 <tr>
-                                    <td>{{$color->color_name}}</td>
+                                    <td>{{$brand->brand_name}}</td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editcolor{{$color->id}}"><i class="fas fa-edit"></i> </button>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletecolor{{$color->id}}"><i class="fas fa-trash"></i> </button>
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editbrand{{$brand->id}}"><i class="fas fa-edit"></i> </button>
+                                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deletebrand{{$brand->id}}"><i class="fas fa-trash"></i> </button>
                                     </td>
                                 </tr>
 
 
-                                <div class="modal fade" id="deletecolor{{$color->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="deletebrand{{$brand->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -57,12 +57,12 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="{{route('admin.delete.color')}}" method="post">
+                                            <form action="{{route('admin.delete.brand')}}" method="post">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="form-group">
-                                                        are you sure to delete this color ?
-                                                        <input type="hidden" class="form-control" name="delete_color" value="{{$color->id}}">
+                                                        are you sure to delete this brand ?
+                                                        <input type="hidden" class="form-control" name="delete_brand" value="{{$brand->id}}">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -77,22 +77,22 @@
 
 
 
-                                <div class="modal fade" id="editcolor{{$color->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="editbrand{{$brand->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Update Color</h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Update Brand</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="{{route('admin.update.color')}}" method="post">
+                                            <form action="{{route('admin.update.brand')}}" method="post">
                                                 @csrf
                                                 <div class="modal-body">
                                                     <div class="form-group">
-                                                        <label>Color Name</label>
-                                                        <input type="text" class="form-control" name="color_name" value="{{$color->color_name}}">
-                                                        <input type="hidden" class="form-control" name="edit_color" value="{{$color->id}}">
+                                                        <label>Brand Name</label>
+                                                        <input type="text" class="form-control" name="brand_name" value="{{$brand->brand_name}}">
+                                                        <input type="hidden" class="form-control" name="edit_brand" value="{{$brand->id}}">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -122,21 +122,21 @@
 
 
 
-    <div class="modal fade" id="createColor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="createBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Create Color</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Create Brand</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('admin.save.color')}}" method="post">
+                <form action="{{route('admin.save.brand')}}" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Color Name</label>
-                            <input type="text" class="form-control" name="color_name">
+                            <label>Brand Name</label>
+                            <input type="text" class="form-control" name="brand_name">
                         </div>
                     </div>
                     <div class="modal-footer">

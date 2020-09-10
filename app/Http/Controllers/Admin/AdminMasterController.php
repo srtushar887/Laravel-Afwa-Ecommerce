@@ -40,6 +40,14 @@ class AdminMasterController extends Controller
         return back()->with('success','Brand Successfully Deleted');
     }
 
+    public function brand_search(Request $request)
+    {
+        $search = $request->search;
+        $brands = brand::where('brand_name','LIKE',"%$search%")->paginate(15);
+        return view('admin.masterdata.brandSearch',compact('brands','search'));
+    }
+
+
 
     public function color()
     {
@@ -73,6 +81,15 @@ class AdminMasterController extends Controller
         $delete_color->delete();
         return back()->with('success','Color Successfully Deleted');
     }
+
+
+    public function color_search(Request $request)
+    {
+        $search = $request->search;
+        $colors = color::where('color_name','LIKE',"%$search%")->paginate(15);
+        return view('admin.masterdata.colorSearch',compact('colors','search'));
+    }
+
 
     public function size()
     {
@@ -109,4 +126,13 @@ class AdminMasterController extends Controller
         return back()->with('success','Size Successfully Deleted');
 
     }
+
+
+    public function size_search(Request $request)
+    {
+        $search = $request->search;
+        $sizes = size::where('size_name','LIKE',"%$search%")->paginate(15);
+        return view('admin.masterdata.sizeSearch',compact('sizes','search'));
+    }
+
 }
