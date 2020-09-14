@@ -106,6 +106,11 @@
                             <span>General Settings</span></a>
                     </li>
 
+{{--                    <li>--}}
+{{--                        <a href="{{route('admin.email.template')}}" class="waves-effect"><i class="mdi mdi-home-analytics"></i>--}}
+{{--                            <span>Email Template</span></a>--}}
+{{--                    </li>--}}
+
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect"><i
                                 class="mdi mdi-diamond-stone"></i><span>Master Data</span></a>

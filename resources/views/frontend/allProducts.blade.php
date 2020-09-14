@@ -238,7 +238,9 @@
                             <!----------- Testimonials------------->
 
                             <!-- ============================================== Testimonials: END ============================================== -->
-                            <div class="home-banner"> <img src="{{asset('assets/frontend/')}}/images/banners/LHS-banner.jpg" alt="Image"> </div>
+                            @if ($static_sec->add_two_status == 1)
+                                <div class="home-banner"> <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image"> </div>
+                            @endif
                         </div>
                         <!-- /.sidebar-filter -->
                     </div>

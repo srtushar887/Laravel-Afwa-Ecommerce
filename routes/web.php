@@ -49,6 +49,13 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 //forgot password
 Route::get('/forgot-password', 'VisitorController@forgot_password')->name('forgot.password');
 Route::post('/forgot-password-submit', 'VisitorController@forgot_password_submit')->name('forgot.password.submit');
+Route::get('/resetpassword/{code}', 'VisitorController@forgot_password_verify')->name('forgot.password.verify');
+Route::post('/forgot-password-reset-save', 'VisitorController@forgot_password_reset_save')->name('forgot.password.reset.save');
+
+
+//custom register
+Route::post('/user-custom-register', 'CustomLoginController@custom_register')->name('user.custom.register');
+Route::get('/account-verify-check/{code}', 'CustomLoginController@user_account_verify')->name('user.account.verify.check');
 
 
 Auth::routes();
@@ -66,6 +73,10 @@ Route::prefix('admin')->group(function (){
 Route::group(['middleware' => ['auth:admin']], function() {
     Route::prefix('admin')->group(function() {
         Route::get('/', 'Admin\AdminController@index')->name('admin.dashboard');
+
+        //email temaplate
+        Route::get('/email-template', 'Admin\AdminController@email_template')->name('admin.email.template');
+        Route::post('/email-template-save', 'Admin\AdminController@email_template_save')->name('admin.email.template.update');
 
         //profile
         Route::get('/profile', 'Admin\AdminController@profile')->name('admin.profile');
@@ -183,6 +194,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
 
         //news latter
         Route::get('/news-latter', 'Admin\AdminFrontendController@news_latter')->name('admin.newslater');
+        Route::post('/news-latter-send', 'Admin\AdminFrontendController@news_latter_send')->name('admin.send.newslatter');
 
         //testimonial
         Route::get('/testimonial', 'Admin\AdminFrontendController@testimonial')->name('admin.tesimonial');
@@ -199,7 +211,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
 });
 
 
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth','accheck']], function() {
     Route::group(['prefix' => 'home'], function ()
     {
         Route::get('/', 'HomeController@index')->name('home');

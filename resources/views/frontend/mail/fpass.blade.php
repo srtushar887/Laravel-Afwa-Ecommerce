@@ -1,201 +1,182 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Forgot Password</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.0">
     <style type="text/css">
-        @media screen {
-            @font-face {
-                font-family: 'Lato';
-                font-style: normal;
-                font-weight: 400;
-                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+        @media only screen and (max-width: 640px) {
+            table[class="devicewidth"] {
+                width: 440px !important;
+                text-align: center !important;
             }
-
-            @font-face {
-                font-family: 'Lato';
-                font-style: normal;
-                font-weight: 700;
-                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+            table[class="devicewidthinner"] {
+                width: 380px !important;
+                text-align: center !important;
             }
-
-            @font-face {
-                font-family: 'Lato';
-                font-style: italic;
-                font-weight: 400;
-                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+            table[class="sthide"] {
+                display: none !important;
             }
-
-            @font-face {
-                font-family: 'Lato';
-                font-style: italic;
-                font-weight: 700;
-                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+            img[class="bigimage"] {
+                width: 100% !important;
+                height: auto !important;
             }
-        }
-
-        /* CLIENT-SPECIFIC STYLES */
-        body,
-        table,
-        td,
-        a {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-        }
-
-        table,
-        td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
-
-        img {
-            -ms-interpolation-mode: bicubic;
-        }
-
-        /* RESET STYLES */
-        img {
-            border: 0;
-            height: auto;
-            line-height: 100%;
-            outline: none;
-            text-decoration: none;
-        }
-
-        table {
-            border-collapse: collapse !important;
-        }
-
-        body {
-            height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-        }
-
-        /* iOS BLUE LINKS */
-        a[x-apple-data-detectors] {
-            color: inherit !important;
-            text-decoration: none !important;
-            font-size: inherit !important;
-            font-family: inherit !important;
-            font-weight: inherit !important;
-            line-height: inherit !important;
-        }
-
-        /* MOBILE STYLES */
-        @media screen and (max-width:600px) {
-            h1 {
-                font-size: 32px !important;
-                line-height: 32px !important;
+            img[class="col2img"] {
+                width: 420px !important;
+                height: 258px !important;
+            }
+            img[class="image-banner"] {
+                width: 440px !important;
+                height: 106px !important;
+            }
+            td[class="menu"] {
+                text-align: center !important;
+                padding: 10px 0 10px 0 !important;
+            }
+            td[class="logo"] {
+                padding: 0px 0 20px 0 !important;
+                margin: 0 auto !important;
+            }
+            img[class="logo"] {
+                padding: 0 !important;
+                margin: 0 auto !important;
             }
         }
 
-        /* ANDROID CENTER FIX */
-        div[style*="margin: 16px 0;"] {
-            margin: 0 !important;
+        @media only screen and (max-width: 480px) {
+            table[class="devicewidth"] {
+                width: 320px !important;
+                text-align: center !important;
+            }
+            table[class="devicewidthinner"] {
+                width: 260px !important;
+                text-align: center !important;
+            }
+            table[class="sthide"] {
+                display: none !important;
+            }
+            img[class="bigimage"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            img[class="col2img"] {
+                width: 260px !important;
+                height: 160px !important;
+            }
+            img[class="image-banner"] {
+                width: 280px !important;
+                height: 68px !important;
+            }
         }
     </style>
 </head>
 
-<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
-<!-- HIDDEN PREHEADER TEXT -->
-<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;"> We're thrilled to have you here! Get ready to dive into your new account. </div>
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-    <!-- LOGO -->
-    <tr>
-        <td bgcolor="#FFA73B" align="center">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+<!-----------Background Body----------->
+
+<body style="width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;background-color: #eeeeee">
+<!-----------Grey Area at top of email----------->
+<div class="block">
+
+    <table width="100%" bgcolor="#eeeeee" cellpadding="0" cellspacing="0" border="0" id="backgroundTable" st-sortable="header" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; width: 100% !important; line-height: 100% !important; ">
+        <tr>
+            <td width="100%" height="40" style="border-collapse: collapse; "></td>
+        </tr>
+        <!-----------Start Logo----------->
+        <table width="50%" bgcolor="#6cc04a" cellpadding="0" cellspacing="0" border="0" align="center" class="devicewidth" hlitebg="edit" shadow="edit" style="border-collapse: collapse; border-radius: 3px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; ">
+            <tr>
+                <td align="center" valign="middle" width="270" style="border-collapse: collapse; padding: 30px 0 30px 0px;background-color: {{$gn->top_header_background_color}}">
+                    <a title="OneTrust" style="color: white; border-bottom: 1px solid transparent; text-decoration: none; font-family: 'Open Sans', arial, sans-serif; font-weight: 400; line-height: 25px;" href="https://www.onetrust.com/">
+                        <img src="{{asset($gn->logo)}}" style="height:80px;width:80%">
+
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <div class="block">
+            <table bgcolor="#ffffff" width="50%" cellpadding="30" cellspacing="0" border="0" align="center" class="devicewidth" modulebg="edit" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-radius: 3px;">
+                <tbody>
                 <tr>
-                    <td align="center" valign="top" style="padding: 40px 10px 40px 10px;"> </td>
+
+                <tr>
+
+                <tr>
+                    <td style="border-collapse: collapse; font-family: OpenSans, arial, sans-serif; font-size: 17px; color: #999999; text-align:left;;line-height: 30px; padding-bottom: 0px; padding-top: 30px;" st-content="fulltext-paragraph">
+                        <span style="color: #999999">Hi <strong>{{$msg['name']}}</strong></span>
+                        <br>
+                        <br>
+
+                        <span style="color: #999999">You are just step away from accessign your {{$gn->site_name}} account.</span>
+                        <br>
+                        <br>
+                        <span style="color: #999999">We are sharing a verification code to access your account . The code is valid for 10 minutes and usable only once.</span>
+                        <br>
+                        <br>
+                        <span style="color: #999999">Once you have verified the code. You'll be prompted to set a new password immediately. This is to ensure that only you have access to your account.</span>
+                        <br>
+                        <br>
+
+                        <span style="color: #999999">Your OPT : <strong>{{$msg['text']}}</strong></span>
+                        <br>
+                        <span style="color: #999999">Expires in : 10 minutes</span>
+
+                        <br>
+                        <br>
+
+                        <span style="color: #999999">Best Regards</span>
+                        <br>
+                        <span style="color: #999999"><b>Team {{$gn->site_name}}</b>.</span>
+                        <br>
+                        <br>
+
+                    </td>
                 </tr>
+
+                </tbody>
             </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor="#FFA73B" align="center" style="padding: 0px 10px 0px 10px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                <tr>
-                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                        <h1 style="font-size: 48px; font-weight: 400; margin: 2;">Welcome!</h1> <img src=" https://img.icons8.com/clouds/100/000000/handshake.png" width="125" height="120" style="display: block; border: 0px;" />
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                <tr>
-                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">We're excited to have you get started. First, you need to confirm your account. Just press the button below.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="#ffffff" align="left">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
-                                    <table border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="#" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr> <!-- COPY -->
-                <tr>
-                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">If that doesn't work, copy and paste the following link in your browser:</p>
-                    </td>
-                </tr> <!-- COPY -->
-                <tr>
-                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;"><a href="#" target="_blank" style="color: #FFA73B;">https://bit.li.utlddssdstueincx</a></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">If you have any questions, just reply to this email—we're always happy to help out.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">Cheers,<br>BBB Team</p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 30px 10px 0px 10px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                <tr>
-                    <td bgcolor="#FFECD1" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;">Need more help?</h2>
-                        <p style="margin: 0;"><a href="#" target="_blank" style="color: #FFA73B;">We&rsquo;re here to help you out</a></p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                <tr>
-                    <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;"> <br>
-                        <p style="margin: 0;">If these emails get annoying, please feel free to <a href="#" target="_blank" style="color: #111111; font-weight: 700;">unsubscribe</a>.</p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+            </td>
+            </tr>
+            </tbody>
+    </table>
+</div>
+<div class="block">
+    <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" id="backgroundTable" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; width: 100% !important; line-height: 100% !important;" width="100%">
+        <tbody>
+        <tr>
+            <td style="border-collapse: collapse;" width="100%">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="devicewidth" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="520">
+                    <tbody>
+                    <tr>
+                        <td height="30" style="border-collapse: collapse;" width="100%"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                <tr>
+                                    <td align="center" style="border-collapse: collapse; font-family: 'Open Sans', Helvetica, Arial, sans-serif; line-height: 16px;" valign="middle">
+
+                                </tr>
+                                <tr>
+                                    <td align="center" style="border-collapse: collapse; font-family: 'Open Sans', Helvetica, Arial, sans-serif; color:#414042; padding-bottom: 20px;">
+
+
+                              <span style="font-size: 12px; line-height: 20px;">
+                              <p>
+                                <a href="{{route('front')}}" id="textEmail" style="color: #6cc04a; text-decoration: underline; display: inline;" target="_blank">{{route('front')}}</a>
+                                <span style="display: inline;"> | </span>
+                              <a href="tel:18448477154" style="color: #6cc04a; text-decoration: underline; display: inline;">{{$gn->site_phone}}</a>
+                              </p>
+                              </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+</div>
 </body>
 
 </html>

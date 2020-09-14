@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use App\Admin;
 use App\Http\Controllers\Controller;
+use App\Mail\NewsLatterEmail;
+use App\Mail\UserInvoiceEmail;
 use App\User;
 use App\user_order;
 use App\user_order_detail;
@@ -11,6 +13,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
@@ -53,9 +56,21 @@ class UserController extends Controller
 
         }
 
-        Cart::destroy();
 
-        return 'success';
+        $to = $user->email;
+
+        $msg = [
+            'text' => $user_order->user_order_id
+        ];
+        Mail::to($to)->send(new UserInvoiceEmail($msg));
+
+
+
+
+
+//        Cart::destroy();
+
+        return back();
 //        return redirect(route('front'))->with('success','Order Added Successfully');
 
     }

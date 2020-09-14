@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\general_setting;
 use App\home_slider;
 use App\Http\Controllers\Controller;
+use App\Mail\NewsLatterEmail;
 use App\news_latter;
 use App\social_icon;
 use App\static_section;
 use App\testimonial;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
 
 class AdminFrontendController extends Controller
@@ -28,7 +32,7 @@ class AdminFrontendController extends Controller
             $imageName = uniqid().'.'."jpg";
             $directory = 'assets/admin/images/slider/';
             $imgUrl1  = $directory.$imageName;
-            Image::make($image)->resize(380,848)->save($imgUrl1);
+            Image::make($image)->resize(848,380)->save($imgUrl1);
             $new_slider->image = $imgUrl1;
         }
 
@@ -50,7 +54,7 @@ class AdminFrontendController extends Controller
             $imageName = uniqid().'.'."jpg";
             $directory = 'assets/admin/images/slider/';
             $imgUrl1  = $directory.$imageName;
-            Image::make($image)->resize(380,848)->save($imgUrl1);
+            Image::make($image)->resize(848,380)->save($imgUrl1);
             $update_slider->image = $imgUrl1;
         }
 
@@ -130,6 +134,39 @@ class AdminFrontendController extends Controller
         $news_latter = news_latter::orderBy('id','desc')->paginate(15);
         return view('admin.frontend.newsLatter',compact('news_latter'));
     }
+
+
+
+    public function news_latter_send(Request $request)
+    {
+        $news = news_latter::all();
+        $message = $request->newsmessage;
+        foreach ($news as $nws)
+        {
+
+            $to = $nws->email;
+
+            $msg = [
+                'text' => $message
+            ];
+            Mail::to($to)->send(new NewsLatterEmail($msg));
+
+
+
+
+        }
+
+
+
+        return back()->with('success','News Latter Successfully Send');
+
+
+
+    }
+
+
+
+
 
 
     public function testimonial()

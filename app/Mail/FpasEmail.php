@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\general_setting;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -17,11 +18,11 @@ class FpasEmail extends Mailable
      * @return void
      */
 
-    public $demo;
+    public $msg;
 
-    public function __construct($demo)
+    public function __construct($msg)
     {
-        $this->demo = $demo;
+        $this->msg = $msg;
     }
 
     /**
@@ -31,7 +32,11 @@ class FpasEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('rcm@amromed.com')
-            ->view('frontend.mail.fpass');
+
+        $gen = general_setting::first();
+
+        return $this->view('frontend.mail.fpass')
+            ->subject('Registration Successfully')
+            ->from($gen->site_email,$gen->site_name);
     }
 }

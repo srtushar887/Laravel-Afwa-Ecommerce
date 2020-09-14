@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\general_setting;
 use App\Http\Controllers\Controller;
+use App\Mail\FpasEmail;
+use App\Mail\greetingEmail;
+use App\Mail\WelcomeMessageEmail;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -51,6 +57,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'phone_number' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -64,11 +71,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $to = $data['email'];
+        $msg = array(
+            'text' => $data['name']
+        );
+//        Mail::to($to)->send(new greetingEmail($msg));
+
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
+            'account_status' => 1,
         ]);
+
+
+
+
+
+
     }
 }

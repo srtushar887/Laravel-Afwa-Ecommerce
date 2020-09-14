@@ -65,9 +65,13 @@
                                     </div>
                                 </form>
                             </div>
+                            @if ($static_sec->add_two_status == 1)
+
+
                             <div class="home-banner outer-top-n outer-bottom-xs">
-                                <img src="{{asset('assets/frontend/')}}/images/banners/LHS-banner.jpg" alt="Image">
+                                <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image">
                             </div>
+                        @endif
                             <!-- ==============================================CATEGORY============================================== -->
                             <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
                                 <h3 class="section-title">Category</h3>

@@ -21,7 +21,10 @@
                     <div class="col-md-6 col-sm-6 sign-in col-lg-offset-3">
                         <h4 class="">Sign in</h4>
                         <p class="">Hello, Welcome to your account.</p>
+                        @if (Session::has('ac_ac_error'))
+                            <p class="text-success">{{Session::get('ac_ac_error')}}</p>
 
+                        @endif
                         <form class="register-form outer-top-xs" role="form" action="{{route('login')}}" method="post">
                             @csrf
                             <div class="form-group">

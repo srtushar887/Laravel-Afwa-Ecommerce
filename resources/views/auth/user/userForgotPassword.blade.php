@@ -4,7 +4,7 @@
         <div class="container">
             <div class="breadcrumb-inner">
                 <ul class="list-inline list-unstyled">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="{{route('front')}}">Home</a></li>
                     <li class='active'>Login</li>
                 </ul>
             </div>
@@ -19,18 +19,23 @@
                 <div class="row">
                     <!-- Sign-in -->
                     <div class="col-md-6 col-sm-6 sign-in col-lg-offset-3">
-                        <h4 class="">Sign in</h4>
-                        <p class="">Hello, Welcome to your account.</p>
+                        <h4 class="">Reset Password</h4>
                         @include('layouts.error')
+                        @if (Session::has('success_f_mess'))
+                            <p class="text-success">{{Session::get('success_f_mess')}}</p>
+                        @endif
+                        @if (Session::has('alert_f_mess'))
+                            <p class="text-success">{{Session::get('alert_f_mess')}}</p>
+                        @endif
+
                         <form class="register-form outer-top-xs" role="form" action="{{route('forgot.password.submit')}}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
                                 <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
                             </div>
-                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
+                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Submit</button>
 
-                            <p class="text-right" style="margin-top: -20px;">Already have an account ?<a href="{{route('login')}}"> Login Here</a></p>
                         </form>
 
 

@@ -68,13 +68,18 @@
                     <!-- /.list-unstyled -->
                 </div>
                 <!-- /.cnt-cart -->
-                <div class="offer-text">{{$gn->site_slogan}}</div>
+                <div class="offer-text">
+                    <marquee>{{$gn->site_slogan}}</marquee>
+                    </div>
                 <div class="clearfix"></div>
             </div>
             <!-- /.header-top-inner -->
         </div>
         <!-- /.container -->
     </div>
+
+
+
     <!-- /.header-top -->
     <!-- ============================================== TOP MENU : END ============================================== -->
     <div class="main-header" style="background-color: {{$gn->bottom_header_background_color}}">

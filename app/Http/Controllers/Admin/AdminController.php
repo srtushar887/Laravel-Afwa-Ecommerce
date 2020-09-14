@@ -131,6 +131,23 @@ class AdminController extends Controller
     }
 
 
+    public function email_template()
+    {
+        $gen = general_setting::first();
+        return view('admin.pages.emailTemplate',compact('gen'));
+    }
+
+    public function email_template_save(Request $request)
+    {
+        $ema = general_setting::first();
+        $ema->email_tem = $request->email_tem;
+        $ema->save();
+        return  back()->with('success','Email Template Successfully Updated');
+    }
+
+
+
+
 
 
 

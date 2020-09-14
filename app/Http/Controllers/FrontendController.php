@@ -32,7 +32,8 @@ class FrontendController extends Controller
         $sliders = home_slider::all();
         $latest_blog = blog::inRandomOrder()->limit(5)->get();
         $tesimonials = testimonial::orderBy('id','desc')->get();
-        return view('frontend.index', compact('top_categories', 'latest_product','sliders','latest_blog','is_hot_deal_product','tesimonials'));
+        $static_sec = static_section::first();
+        return view('frontend.index', compact('top_categories', 'latest_product','sliders','latest_blog','is_hot_deal_product','tesimonials','static_sec'));
     }
 
     public function all_products()
@@ -42,7 +43,8 @@ class FrontendController extends Controller
         $mid_cats = middle_category::all();
         $end_cats = end_category::all();
         $brands = brand::all();
-        return view('frontend.allProducts', compact('products', 'top_cats', 'mid_cats', 'end_cats', 'brands'));
+        $static_sec = static_section::first();
+        return view('frontend.allProducts', compact('products', 'top_cats', 'mid_cats', 'end_cats', 'brands','static_sec'));
     }
 
     public function main_category_products($id)
@@ -79,7 +81,8 @@ class FrontendController extends Controller
     {
         $blogs = blog::orderBy('id','desc')->paginate(3);
         $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
-        return view('frontend.blogs',compact('blogs','blog_categories'));
+        $static_sec = static_section::first();
+        return view('frontend.blogs',compact('blogs','blog_categories','static_sec'));
     }
 
 

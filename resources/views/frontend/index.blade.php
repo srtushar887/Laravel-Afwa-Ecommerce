@@ -40,7 +40,10 @@
                 </div>
                 <!-- /.side-menu -->
                 <!-- ================================== TOP NAVIGATION : END ================================== -->
-                <div class="app-img outer-bottom-xs"><img alt="app" src="{{asset('assets/frontend/')}}/images/app-img.jpg" /></div>
+                @if ($static_sec->add_one_status == 1)
+                    <div class="app-img outer-bottom-xs"><img alt="app" src="{{asset($static_sec->add_image_one)}}" style="height: 88px;width: 100%" /></div>
+                @endif
+
             </div>
 
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -223,8 +226,11 @@
                 </div>
 
                 <!-- ============================================== Testimonials: END ============================================== -->
+                @if ($static_sec->add_two_status == 1)
+                    <div class="home-banner"> <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image"> </div>
+                @endif
 
-                <div class="home-banner"> <img src="{{asset('assets/frontend/')}}/images/banners/LHS-banner.jpg" alt="Image"> </div>
+
             </div>
             <!-- /.sidemenu-holder -->
             <!-- ============================================== SIDEBAR : END ============================================== -->
@@ -240,19 +246,24 @@
                 <!-- ============================================== WIDE PRODUCTS ============================================== -->
                 <div class="wide-banners wow fadeInUp outer-bottom-xs">
                     <div class="row">
-                        <div class="col-md-7 col-sm-7">
-                            <div class="wide-banner cnt-strip">
-                                <div class="image"> <img class="img-responsive" src="{{asset('assets/frontend/')}}/images/banners/home-banner1.jpg" alt=""> </div>
+                        @if ($static_sec->add_three_status == 1)
+                            <div class="col-md-7 col-sm-7">
+                                <div class="wide-banner cnt-strip">
+                                    <div class="image"> <img class="img-responsive" src="{{asset($static_sec->add_image_three)}}" style="height: 185px;width: 100%" alt=""> </div>
+                                </div>
+                                <!-- /.wide-banner -->
                             </div>
-                            <!-- /.wide-banner -->
-                        </div>
+                        @endif
+
                         <!-- /.col -->
+                            @if ($static_sec->add_four_status == 1)
                         <div class="col-md-5 col-sm-5">
                             <div class="wide-banner cnt-strip">
-                                <div class="image"> <img class="img-responsive" src="{{asset('assets/frontend/')}}/images/banners/home-banner2.jpg" alt=""> </div>
+                                <div class="image"> <img class="img-responsive" src="{{asset($static_sec->add_image_four)}}" style="height: 185px;width: 100%" alt=""> </div>
                             </div>
                             <!-- /.wide-banner -->
                         </div>
+                        @endif
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
