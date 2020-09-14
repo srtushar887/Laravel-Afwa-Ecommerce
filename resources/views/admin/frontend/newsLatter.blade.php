@@ -32,6 +32,7 @@
                             </thead>
                             <tbody>
                             @foreach($news_latter as $nemail)
+                                <tr>
                                     <td>{{$nemail->email}}</td>
                                 </tr>
 

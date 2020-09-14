@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Admin;
 use App\general_setting;
 use App\Http\Controllers\Controller;
+use App\product;
 use App\User;
 use App\user_order;
 use Illuminate\Http\Request;
@@ -20,7 +21,11 @@ class AdminController extends Controller
             ->where('status',1)
             ->paginate(5);
         $users = User::orderBy('id','desc')->paginate(5);
-        return view('admin.index',compact('orders','users'));
+        $total_products = product::count();
+        $total_user = User::count();
+        $total_delivered_orders = user_order::where('status',2)->count();
+        $total_earning = user_order::where('status',2)->sum('total_amount');
+        return view('admin.index',compact('orders','users','total_products','total_user','total_delivered_orders','total_earning'));
     }
 
 

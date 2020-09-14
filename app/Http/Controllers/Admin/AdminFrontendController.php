@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\contact_us_data;
 use App\general_setting;
 use App\home_slider;
 use App\Http\Controllers\Controller;
+use App\Mail\ContactEmail;
 use App\Mail\NewsLatterEmail;
 use App\news_latter;
 use App\social_icon;
@@ -151,9 +153,6 @@ class AdminFrontendController extends Controller
             ];
             Mail::to($to)->send(new NewsLatterEmail($msg));
 
-
-
-
         }
 
 
@@ -270,6 +269,35 @@ class AdminFrontendController extends Controller
 
 
     }
+
+    public function contact_us()
+    {
+        $contact_us = contact_us_data::orderBy('id','desc')->paginate(10);
+        return view('admin.frontend.contactUs',compact('contact_us'));
+    }
+
+
+    public function contact_us_send(Request $request)
+    {
+        $contact = contact_us_data::where('id',$request->contact_id)->first();
+        $contact->status = 2;
+        $contact->save();
+
+        $message = $request->message;
+        $to = $contact->email;
+
+        $msg = [
+            'text' => $message,
+            'name' => $contact->name,
+        ];
+        Mail::to($to)->send(new ContactEmail($msg));
+
+        return back()->with('success','Message Successfully Send');
+
+
+    }
+
+
 
 
 

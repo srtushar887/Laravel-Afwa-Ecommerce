@@ -206,6 +206,10 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::get('/advertisement', 'Admin\AdminFrontendController@advertisement')->name('admin.advertisement');
         Route::post('/advertisement-update', 'Admin\AdminFrontendController@advertisement_update')->name('admin.advertisement.update');
 
+        //contact us
+        Route::get('/contact-us', 'Admin\AdminFrontendController@contact_us')->name('admin.contact.us');
+        Route::post('/contact-us-send', 'Admin\AdminFrontendController@contact_us_send')->name('admin.send.contactmessage');
+
 
     });
 });

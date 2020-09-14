@@ -20,25 +20,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">Daily</span>
+
                         <h5 class="card-title mb-0">Total Product</h5>
                     </div>
                     <div class="row d-flex align-items-center mb-4">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $17.21
+                                {{$total_products}}
                             </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                                                <span class="text-muted">12.5% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
                         </div>
                     </div>
 
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
                 </div>
                 <!--end card body-->
             </div><!-- end card-->
@@ -48,25 +40,37 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">Per Week</span>
+
+                        <h5 class="card-title mb-0">Total Delivered Order</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                {{$total_delivered_orders}}
+                            </h2>
+                        </div>
+                    </div>
+
+                </div>
+                <!--end card body-->
+            </div><!-- end card-->
+        </div> <!-- end col-->
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-4">
+
                         <h5 class="card-title mb-0">Total Users</h5>
                     </div>
                     <div class="row d-flex align-items-center mb-4">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $1875.54
+                                {{$total_user}}
                             </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                                                <span class="text-muted">18.71% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
                         </div>
                     </div>
 
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
                 </div>
                 <!--end card body-->
             </div><!-- end card-->
@@ -76,53 +80,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">Per Month</span>
-                        <h5 class="card-title mb-0">Total Orders</h5>
+
+                        <h5 class="card-title mb-0">Total Earning</h5>
                     </div>
                     <div class="row d-flex align-items-center mb-4">
                         <div class="col-8">
                             <h2 class="d-flex align-items-center mb-0">
-                                $784.62
+                                {{$gn->site_currency}}{{number_format($total_earning,2)}}
                             </h2>
                         </div>
-                        <div class="col-4 text-right">
-                                                <span class="text-muted">57% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                        </div>
                     </div>
 
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
-                        </div>
-                    </div>
-                </div>
-                <!--end card body-->
-            </div>
-            <!--end card-->
-        </div> <!-- end col-->
-
-        <div class="col-md-6 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="mb-4">
-                        <span class="badge badge-soft-primary float-right">All Time</span>
-                        <h5 class="card-title mb-0">Daily Visits</h5>
-                    </div>
-                    <div class="row d-flex align-items-center mb-4">
-                        <div class="col-8">
-                            <h2 class="d-flex align-items-center mb-0">
-                                1,15,187
-                            </h2>
-                        </div>
-                        <div class="col-4 text-right">
-                                                <span class="text-muted">17.8% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress shadow-sm" style="height: 5px;">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
-                    </div>
                 </div>
                 <!--end card body-->
             </div><!-- end card-->

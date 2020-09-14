@@ -172,7 +172,7 @@
                     </li>
 
                     <li>
-                        <a href="{{route('admin.product')}}" class="waves-effect"><i class="mdi mdi-home-analytics"></i>
+                        <a href="{{route('admin.contact.us')}}" class="waves-effect"><i class="mdi mdi-home-analytics"></i>
                             <span>Contact Us Data</span></a>
                     </li>
 
