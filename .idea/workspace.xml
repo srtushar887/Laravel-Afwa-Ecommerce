@@ -8,11 +8,12 @@
     <list default="true" id="9d09e8d0-8695-4441-82e8-fde024c9b9ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminFrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminFrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/frontend/newsLatter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/frontend/newsLatter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/frontend/staticData.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/frontend/staticData.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/userLogin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/userLogin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/productDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/productDetails.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +199,10 @@
       <workItem from="1599831303287" duration="27463000" />
       <workItem from="1599898025945" duration="621000" />
       <workItem from="1600069790470" duration="3960000" />
-      <workItem from="1600086221018" duration="825000" />
+      <workItem from="1600086221018" duration="917000" />
+      <workItem from="1600178412569" duration="3432000" />
+      <workItem from="1600244232910" duration="127000" />
+      <workItem from="1600252996044" duration="184000" />
     </task>
     <servers />
   </component>
@@ -223,10 +227,11 @@
     </state>
     <state x="2613" y="298" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/56.26.1864.1054/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599858526871" />
     <state x="2613" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600075350785" />
-    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599898646064">
+    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600244358100">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl/56.26.1864.1054/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599898646064" />
+    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600244358100" />
     <state x="2530" y="259" width="689" height="561" key="NewPhpClassDialog" timestamp="1599243253203">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -255,7 +260,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/productDetails.blade.php</url>
-          <line>592</line>
+          <line>605</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

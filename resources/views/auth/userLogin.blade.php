@@ -40,14 +40,14 @@
                             </div>
                             <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
 
-                            <p class="text-right" style="margin-top: -20px;">Dont have an account ?<a href="{{route('register')}}">Create Here</a></p>
+                            <p class="text-right" style="margin-top: -20px;">Dont have an account ?<a href="{{route('register')}}"> Create Here</a></p>
 {{--                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button pull-right">Register</button>--}}
                         </form>
 
 
-                        <div class="social-sign-in outer-top-xs">
+                        <div class="social-sign-in outer-top-xs text-center">
                             <a href="{{ url('/auth/redirect/facebook') }}" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
-                            <a href="{{ url('/auth/redirect/google') }}" class="twitter-sign-in"><i class="fa fa-google"></i> Sign In with Twitter</a>
+                            <a href="{{ url('/auth/redirect/google') }}" class="twitter-sign-in"><i class="fa fa-google"></i> Sign In with Google</a>
                         </div>
 
                     </div>

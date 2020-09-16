@@ -52,10 +52,17 @@
 @stop
 
 @section('js')
-    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'summary-ckeditor-about' );
-        CKEDITOR.replace( 'summary-ckeditor-privacy' );
-        CKEDITOR.replace( 'summary-ckeditor-trems' );
-    </script>
+
+    <script type="text/javascript" src="{{asset('assets/admin/js/nicEdit-latest.js')}}"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+{{--    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript"></script>--}}
+{{--    <script>bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });</script>--}}
+
+{{--    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>--}}
+{{--    <script>--}}
+{{--        CKEDITOR.replace( 'summary-ckeditor-about' );--}}
+{{--        CKEDITOR.replace( 'summary-ckeditor-privacy' );--}}
+{{--        CKEDITOR.replace( 'summary-ckeditor-trems' );--}}
+{{--    </script>--}}
 @stop

@@ -85,9 +85,9 @@
     <div class="main-header" style="background-color: {{$gn->bottom_header_background_color}}">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                <div class="col-xs-12 col-sm-12 col-md-3 logo-holder" >
                     <!-- ============================================================= LOGO ============================================================= -->
-                    <div class="logo"> <a href="{{route('front')}}"> <img src="{{asset($gn->logo)}}" style="height: 50px;width: 150px;margin-top: -10px;" alt="logo"> </a> </div>
+                    <div class="logo"> <a href="{{route('front')}}"> <img src="{{asset($gn->logo)}}" style="height: 100%;width: 100%;margin-top: -28px;" alt="logo"> </a> </div>
                     <!-- /.logo -->
                     <!-- ============================================================= LOGO : END ============================================================= --> </div>
                 <!-- /.logo-holder -->

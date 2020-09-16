@@ -221,7 +221,7 @@
                                     </div>
                                     <!-- /.stock-container -->
                                     <div class="description-container m-t-20">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        {!! $product->sort_des !!}
                                     </div>
 
                                     <form action="{{route('add.to.cart.single')}}" method="post">
@@ -350,10 +350,23 @@
                                             <div class="product-reviews">
                                                 <h4 class="title">Customer Reviews</h4>
                                                 <div class="reviews">
+                                                    @if (count($product_reviews) > 0)
+
+
+                                                    @foreach($product_reviews as $review)
+                                                        <?php
+
+                                                        $date = \Carbon\Carbon::now();
+                                                        $times = strtotime($review->created_at)
+                                                        ?>
                                                     <div class="review">
-                                                        <div class="review-title"><span class="summary">We love this product</span><span class="date"><i class="fa fa-calendar"></i><span>1 days ago</span></span></div>
-                                                        <div class="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aliquam suscipit."</div>
+                                                        <div class="review-title"><span class="summary">{{$review->name}}</span><span class="date"><i class="fa fa-calendar"></i><span>{{\Carbon\Carbon::parse($review->created_at)->diffForHumans()}}</span></span></div>
+                                                        <div class="text">"{!! $review->message !!}"</div>
                                                     </div>
+                                                    @endforeach
+                                                    @else
+                                                        <p class="text-center">No Review</p>
+                                                    @endif
                                                 </div>
                                                 <!-- /.reviews -->
                                             </div>

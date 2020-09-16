@@ -235,20 +235,20 @@
 
 
 <!-- Sparkline Js-->
-<script src="http://myrathemes.com/xeloro/layouts/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="{{asset('assets/admin/')}}/js/jquery.sparkline.min.js"></script>
 
 <!-- Chart Js-->
-<script src="http://myrathemes.com/xeloro/layouts/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="{{asset('assets/admin/')}}/js/jquery.knob.min.js"></script>
 
 <!-- Chart Custom Js-->
 <script src="{{asset('assets/admin/')}}/pages/knob-chart-demo.js"></script>
 
 
 <!-- Morris Js-->
-<script src="http://myrathemes.com/xeloro/layouts/plugins/morris-js/morris.min.js"></script>
+<script src="{{asset('assets/admin/')}}/js/morris.min.js"></script>
 
 <!-- Raphael Js-->
-<script src="http://myrathemes.com/xeloro/layouts/plugins/raphael/raphael.min.js"></script>
+<script src="{{asset('assets/admin/')}}/js/raphael.min.js"></script>
 
 <!-- Custom Js -->
 <script src="{{asset('assets/admin/')}}/pages/dashboard-demo.js"></script>

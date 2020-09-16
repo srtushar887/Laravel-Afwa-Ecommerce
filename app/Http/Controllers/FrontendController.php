@@ -177,7 +177,8 @@ class FrontendController extends Controller
        $related_product = product::where('top_cat_id',$product->top_cat_id)->where('id','!=',$product->id)->inRandomOrder()
            ->where('status',1)
            ->limit(10)->get();
-       return view('frontend.productDetails',compact('product','colors','sizes','related_product'));
+       $product_reviews = product_review::where('product_review_id',$product->id)->orderBy('id','desc')->get();
+       return view('frontend.productDetails',compact('product','colors','sizes','related_product','product_reviews'));
    }
 
 

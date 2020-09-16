@@ -46,7 +46,7 @@ class AdminController extends Controller
             $imageName = uniqid().'.'."png";
             $directory = 'assets/admin/images/logo/';
             $imgUrl  = $directory.$imageName;
-            Image::make($image)->save($imgUrl);
+            Image::make($image)->resize(150,50)->save($imgUrl);
             $gen->logo = $imgUrl;
         }
         if($request->hasFile('icon')){
@@ -55,7 +55,7 @@ class AdminController extends Controller
             $imageName = uniqid().'.'."png";
             $directory = 'assets/admin/images/logo/';
             $imgUrl1  = $directory.$imageName;
-            Image::make($image)->save($imgUrl1);
+            Image::make($image)->resize(16,16)->save($imgUrl1);
             $gen->icon = $imgUrl1;
         }
 
