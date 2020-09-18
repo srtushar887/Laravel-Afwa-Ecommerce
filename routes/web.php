@@ -35,6 +35,7 @@ Route::post('/news-latter-save', 'FrontendController@news_later_save')->name('us
 Route::post('/contact-us-save', 'FrontendController@contact_us_save')->name('contactus.save');
 Route::post('/product-review-save', 'FrontendController@product_review_save')->name('product.review.save');
 Route::get('/search-product', 'FrontendController@search_product')->name('search.product');
+Route::get('/today-offer', 'FrontendController@today_offer')->name('today.offer');
 
 
 //frontend filter

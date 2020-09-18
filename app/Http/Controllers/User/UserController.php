@@ -37,7 +37,7 @@ class UserController extends Controller
 
         $user_order = new user_order();
         $user_order->user_id = $user->id;
-        $user_order->user_order_id = $user->id . rand(0000000000, 9999999999);
+        $user_order->user_order_id = $user->id . rand(0000000000, 9999999999);// add time stamp
         $user_order->total_amount = $request->amount;
         $user_order->status = 1;
 
@@ -63,9 +63,6 @@ class UserController extends Controller
             'text' => $user_order->user_order_id
         ];
         Mail::to($to)->send(new UserInvoiceEmail($msg));
-
-
-
 
 
 //        Cart::destroy();

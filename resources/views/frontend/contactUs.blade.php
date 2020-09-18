@@ -19,7 +19,7 @@
             <div class="contact-page">
                 <div class="row">
                     <div class="col-md-12 contact-map outer-bottom-vs">
-                        <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=No%2015,%20Perambur%20High%20Road%202nd%20Street,%20Perambur,%20Chennai%20-%20600%20012+(Afwa.Shop)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="600" height="450"  style="border:0"></iframe>
+                        <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=15,%20Perambur%20High%20Rd,%20Perambur,%20Chennai,%20Tamil%20Nadu%20600039,%20India+(afwa)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="600" height="450"  style="border:0"></iframe>
                     </div>
                     <form action="{{route('contactus.save')}}" method="post">
                         @csrf

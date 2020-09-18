@@ -20,6 +20,7 @@ class AdminCategoryController extends Controller
     {
         $new_top_cate = new top_category();
         $new_top_cate->category_name = $request->category_name;
+        $new_top_cate->category_icon = $request->category_icon;
         $new_top_cate->save();
         return back()->with('success','Top Category Successfully Created');
 
@@ -30,6 +31,7 @@ class AdminCategoryController extends Controller
     {
         $update_top_cat = top_category::where('id',$request->edit_category)->first();
         $update_top_cat->category_name = $request->category_name;
+        $update_top_cat->category_icon = $request->category_icon;
         $update_top_cat->save();
         return back()->with('success','Top Category Successfully Updated');
     }

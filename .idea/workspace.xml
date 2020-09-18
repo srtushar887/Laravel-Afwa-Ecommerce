@@ -7,13 +7,21 @@
   <component name="ChangeListManager">
     <list default="true" id="9d09e8d0-8695-4441-82e8-fde024c9b9ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/frontend/staticData.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/frontend/staticData.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/topCategory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/topCategory.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/productCreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/productCreate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/productEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/productEdit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/userLogin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/userLogin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/productDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/productDetails.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/allProducts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/allProducts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blogDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blogDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blogs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blogs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contactUs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contactUs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +210,10 @@
       <workItem from="1600086221018" duration="917000" />
       <workItem from="1600178412569" duration="3432000" />
       <workItem from="1600244232910" duration="127000" />
-      <workItem from="1600252996044" duration="184000" />
+      <workItem from="1600252996044" duration="1036000" />
+      <workItem from="1600264419414" duration="1571000" />
+      <workItem from="1600326851354" duration="625000" />
+      <workItem from="1600420415746" duration="4845000" />
     </task>
     <servers />
   </component>
@@ -227,20 +238,20 @@
     </state>
     <state x="2613" y="298" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/56.26.1864.1054/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599858526871" />
     <state x="2613" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600075350785" />
-    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600244358100">
+    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl" timestamp="1600329171265">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl/56.26.1864.1054/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599898646064" />
-    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600244358100" />
+    <state x="2663" y="298" width="424" height="484" key="FileChooserDialogImpl/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600329171265" />
     <state x="2530" y="259" width="689" height="561" key="NewPhpClassDialog" timestamp="1599243253203">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2530" y="259" width="689" height="561" key="NewPhpClassDialog/56.26.1864.1054/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599243253203" />
-    <state x="2675" y="465" width="399" height="156" key="NewPhpFileDialog" timestamp="1600075365414">
+    <state x="2675" y="465" width="399" height="156" key="NewPhpFileDialog" timestamp="1600429296681">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2675" y="465" width="399" height="156" key="NewPhpFileDialog/56.26.1864.1054/1920.0.1920.1080@1920.0.1920.1080" timestamp="1599858645581" />
-    <state x="2675" y="465" width="399" height="156" key="NewPhpFileDialog/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600075365414" />
+    <state x="2675" y="465" width="399" height="156" key="NewPhpFileDialog/60.28.1860.1052/1920.0.1920.1080@1920.0.1920.1080" timestamp="1600429296681" />
     <state x="2369" y="175" width="1022" height="737" key="SettingsEditor" timestamp="1599639907000">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

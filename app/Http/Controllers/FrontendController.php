@@ -91,7 +91,8 @@ class FrontendController extends Controller
         $blogs = blog::where('id',$id)->first();
         $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
         $blog_comments = blog_comment::where('blog_id',$id)->orderBy('id','desc')->get();
-        return view('frontend.blogDetails',compact('blogs','blog_categories','blog_comments'));
+        $static_sec = static_section::first();
+        return view('frontend.blogDetails',compact('blogs','blog_categories','blog_comments','static_sec'));
     }
 
 
@@ -118,14 +119,16 @@ class FrontendController extends Controller
         $search = $request->search;
         $blogs = blog::where('blog_title','LIKE',"%$search%")->orderBy('id','desc')->paginate(3);
         $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
-        return view('frontend.blogSearch',compact('blogs','blog_categories','search'));
+        $static_sec = static_section::first();
+        return view('frontend.blogSearch',compact('blogs','blog_categories','search','static_sec'));
     }
 
     public function blog_category_view($id)
     {
         $blogs = blog::where('blog_cat_id',$id)->orderBy('id','desc')->paginate(3);
         $blog_categories = blog_category::inRandomOrder()->limit(5)->get();
-        return view('frontend.blogs',compact('blogs','blog_categories'));
+        $static_sec = static_section::first();
+        return view('frontend.blogs',compact('blogs','blog_categories','static_sec'));
     }
 
 
@@ -274,6 +277,20 @@ class FrontendController extends Controller
        return view('frontend.searchProduct',compact('search','products','top_cats','mid_cats','end_cats','brands'));
 
    }
+
+   public function today_offer()
+   {
+       $products = product::where('status', 1)
+           ->where('is_today_offer',1)
+           ->orderBy('id', 'desc')->paginate(8);
+       $top_cats = top_category::all();
+       $mid_cats = middle_category::all();
+       $end_cats = end_category::all();
+       $brands = brand::all();
+       $static_sec = static_section::first();
+       return view('frontend.todayOffer', compact('products', 'top_cats', 'mid_cats', 'end_cats', 'brands','static_sec'));
+   }
+
 
 
 

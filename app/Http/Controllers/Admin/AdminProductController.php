@@ -103,6 +103,7 @@ class AdminProductController extends Controller
         $new_product->sort_des = $request->sort_des;
         $new_product->long_des = $request->long_des;
         $new_product->is_hot_deal = $request->is_hot_deal;
+        $new_product->is_today_offer = $request->is_today_offer;
         $new_product->status = $request->status;
 
 
@@ -238,6 +239,7 @@ class AdminProductController extends Controller
         $update_product->sort_des = $request->sort_des;
         $update_product->long_des = $request->long_des;
         $update_product->is_hot_deal = $request->is_hot_deal;
+        $update_product->is_today_offer = $request->is_today_offer;
         $update_product->status = $request->status;
 
 

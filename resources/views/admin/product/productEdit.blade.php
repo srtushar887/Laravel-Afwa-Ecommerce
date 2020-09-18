@@ -188,7 +188,7 @@
                                 <textarea type="text" cols="5" rows="5" name="long_des" class="form-control" >{!! $product->long_des !!}</textarea>
                             </div>
 
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label for="validationCustom01">Is Hot Deal</label>
                                 <select class="form-control" name="is_hot_deal">
                                     <option value="0">select any</option>
@@ -196,8 +196,16 @@
                                     <option value="2" {{$product->is_hot_deal == 2 ? 'selected' : ''}}>No</option>
                                 </select>
                             </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationCustom01">Is Today Offer</label>
+                                <select class="form-control" name="is_today_offer">
+                                    <option value="0">select any</option>
+                                    <option value="1" {{$product->is_today_offer == 1 ? 'selected' : ''}}>Yes</option>
+                                    <option value="2" {{$product->is_today_offer == 2 ? 'selected' : ''}}>No</option>
+                                </select>
+                            </div>
 
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label for="validationCustom01">Product Status</label>
                                 <select class="form-control" name="status">
                                     <option value="0">select any</option>

@@ -239,7 +239,10 @@
 
                             <!-- ============================================== Testimonials: END ============================================== -->
                             @if ($static_sec->add_two_status == 1)
-                                <div class="home-banner"> <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image"> </div>
+                                <a href="{{$static_sec->add_two_link}}" target="_blank">
+
+                                    <div class="home-banner"> <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image"> </div>
+                                </a>
                             @endif
                         </div>
                         <!-- /.sidebar-filter -->

@@ -28,7 +28,7 @@
     <!-- Icons/Glyphs -->
     <link rel="stylesheet" href="{{asset('assets/frontend/')}}/css/font-awesome.css">
     @yield('css')
-
+    <script src="https://kit.fontawesome.com/ce870e4a39.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
@@ -185,7 +185,7 @@
                                 <li class="{{ Request::is('about-us') ? 'active' : '' }} dropdown yamm-fw"> <a href="{{route('about.us')}}">About Us</a> </li>
                                 <li class="{{ Request::is('blogs') ? 'active' : '' }} dropdown yamm-fw"> <a href="{{route('blogs')}}">Blogs</a> </li>
                                 <li class="{{ Request::is('contact-us') ? 'active' : '' }} dropdown yamm-fw"> <a href="{{route('contact.us')}}">Contact Us</a> </li>
-                                <li class=" dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
+                                <li class=" dropdown  navbar-right special-menu"> <a href="{{route('today.offer')}}">Todays offer</a> </li>
                             </ul>
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>

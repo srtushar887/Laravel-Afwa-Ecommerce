@@ -35,6 +35,7 @@
                             <thead>
                             <tr>
                                 <th>Top Category Name</th>
+                                <th>Top Category Icon</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -42,6 +43,7 @@
                             @foreach($top_cats as $tcat)
                                 <tr>
                                     <td>{{$tcat->category_name}}</td>
+                                    <td>{{$tcat->category_icon}} </td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editTopCategory{{$tcat->id}}"><i class="fas fa-edit"></i> </button>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteTopCategory{{$tcat->id}}"><i class="fas fa-trash"></i> </button>
@@ -95,6 +97,10 @@
                                                         <input type="text" class="form-control" name="category_name" value="{{$tcat->category_name}}">
                                                         <input type="hidden" class="form-control" name="edit_category" value="{{$tcat->id}}">
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Category Icon</label> <a href="https://fontawesome.com/icons?d=gallery" target="_blank">Get Icon</a>
+                                                        <input type="text" class="form-control" name="category_icon" value="{{$tcat->category_icon}}">
+                                                    </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -139,6 +145,10 @@
                         <div class="form-group">
                             <label>Category Name</label>
                             <input type="text" class="form-control" name="category_name">
+                        </div>
+                        <div class="form-group">
+                            <label>Category Icon</label> <a href="https://fontawesome.com/icons?d=gallery" target="_blank">Get Icon</a>
+                            <input type="text" class="form-control" name="category_icon">
                         </div>
                     </div>
                     <div class="modal-footer">

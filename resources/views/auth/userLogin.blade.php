@@ -29,11 +29,21 @@
                             @csrf
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" >
+                                <input type="email" name="email" class="form-control unicase-form-control text-input @error('email') is-invalid @enderror" value="{{ old('email') }}" id="exampleInputEmail1" >
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-                                <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
+                                <input type="password" name="password" class="form-control unicase-form-control text-input @error('email') is-invalid @enderror" id="exampleInputPassword1" >
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="radio outer-xs">
                                 <a href="{{route('forgot.password')}}" class="forgot-password pull-right">Forgot your Password?</a>
@@ -41,7 +51,7 @@
                             <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
 
                             <p class="text-right" style="margin-top: -20px;">Dont have an account ?<a href="{{route('register')}}"> Create Here</a></p>
-{{--                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button pull-right">Register</button>--}}
+                            {{--                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button pull-right">Register</button>--}}
                         </form>
 
 

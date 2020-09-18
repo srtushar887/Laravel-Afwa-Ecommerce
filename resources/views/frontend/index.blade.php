@@ -8,7 +8,7 @@
                     <nav class="yamm megamenu-horizontal">
                         <ul class="nav">
                             @foreach($top_categories as $htcats)
-                            <li class="dropdown menu-item"> <a href="{{route('main.category.products',$htcats->id)}}"><i class="icon fa fa-shopping-bag" aria-hidden="true"></i>{{$htcats->category_name}}</a>
+                            <li class="dropdown menu-item"> <a href="{{route('main.category.products',$htcats->id)}}"><i class="{{$htcats->category_icon}}"></i> {{$htcats->category_name}}</a>
                                 <ul class="dropdown-menu mega-menu">
                                     <li class="yamm-content">
                                         <div class="row">
@@ -41,7 +41,10 @@
                 <!-- /.side-menu -->
                 <!-- ================================== TOP NAVIGATION : END ================================== -->
                 @if ($static_sec->add_one_status == 1)
-                    <div class="app-img outer-bottom-xs"><img alt="app" src="{{asset($static_sec->add_image_one)}}" style="height: 88px;width: 100%" /></div>
+                    <a href="{{$static_sec->add_one_link}}" target="_blank">
+
+                        <div class="app-img outer-bottom-xs"><img alt="app" src="{{asset($static_sec->add_image_one)}}" style="height: 88px;width: 100%" /></div>
+                    </a>
                 @endif
 
             </div>
@@ -227,7 +230,10 @@
 
                 <!-- ============================================== Testimonials: END ============================================== -->
                 @if ($static_sec->add_two_status == 1)
-                    <div class="home-banner"> <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image"> </div>
+                    <a href="{{$static_sec->add_two_link}}" target="_blank">
+
+                        <div class="home-banner"> <img src="{{asset($static_sec->add_image_two)}}" style="height: 300px;width: 100%" alt="Image"> </div>
+                    </a>
                 @endif
 
 
@@ -247,22 +253,26 @@
                 <div class="wide-banners wow fadeInUp outer-bottom-xs">
                     <div class="row">
                         @if ($static_sec->add_three_status == 1)
+                            <a href="{{$static_sec->add_three_link}}"  target="_blank">
                             <div class="col-md-7 col-sm-7">
                                 <div class="wide-banner cnt-strip">
                                     <div class="image"> <img class="img-responsive" src="{{asset($static_sec->add_image_three)}}" style="height: 185px;width: 100%" alt=""> </div>
                                 </div>
                                 <!-- /.wide-banner -->
                             </div>
+                            </a>
                         @endif
 
                         <!-- /.col -->
                             @if ($static_sec->add_four_status == 1)
-                        <div class="col-md-5 col-sm-5">
-                            <div class="wide-banner cnt-strip">
-                                <div class="image"> <img class="img-responsive" src="{{asset($static_sec->add_image_four)}}" style="height: 185px;width: 100%" alt=""> </div>
-                            </div>
-                            <!-- /.wide-banner -->
-                        </div>
+                                <a href="{{$static_sec->add_four_link}}" target="_blank">
+                                <div class="col-md-5 col-sm-5">
+                                    <div class="wide-banner cnt-strip">
+                                        <div class="image"> <img class="img-responsive" src="{{asset($static_sec->add_image_four)}}" style="height: 185px;width: 100%" alt=""> </div>
+                                    </div>
+                                    <!-- /.wide-banner -->
+                                </div>
+                                </a>
                         @endif
                         <!-- /.col -->
                     </div>
@@ -439,29 +449,7 @@
                 <!-- /.section -->
                 <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
                 <!-- ============================================== WIDE PRODUCTS ============================================== -->
-                <div class="wide-banners wow fadeInUp outer-bottom-xs">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="wide-banner cnt-strip">
-                                <div class="image"> <img class="img-responsive" src="{{asset('assets/frontend/')}}/images/banners/home-banner.jpg" alt=""> </div>
-                                <div class="strip strip-text">
-                                    <div class="strip-inner">
-                                        <h2 class="text-right">New Mens Fashion<br>
-                                            <span class="shopping-needs">Save up to 40% off</span></h2>
-                                    </div>
-                                </div>
-                                <div class="new-label">
-                                    <div class="text">NEW</div>
-                                </div>
-                                <!-- /.new-label -->
-                            </div>
-                            <!-- /.wide-banner -->
-                        </div>
-                        <!-- /.col -->
 
-                    </div>
-                    <!-- /.row -->
-                </div>
                 <!-- /.wide-banners -->
                 <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
                 <!-- ============================================== BEST SELLER ============================================== -->
