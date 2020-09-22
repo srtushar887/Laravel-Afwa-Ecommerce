@@ -31,11 +31,11 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom01">Product Old Price (if have)</label>
-                                <input type="text" name="product_old_price" value="{{$product->product_old_price}}" class="form-control" >
+                                <input type="number" name="product_old_price" value="{{$product->product_old_price}}" class="form-control" >
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom01">Product New Price</label>
-                                <input type="text" name="product_new_price" value="{{$product->product_new_price}}" class="form-control" >
+                                <input type="number" name="product_new_price" value="{{$product->product_new_price}}" class="form-control" >
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label for="validationCustom01">Product Main Category</label>
@@ -235,6 +235,11 @@
 
 @stop
 @section('js')
+
+    <script type="text/javascript" src="{{asset('assets/admin/js/nicEdit-latest.js')}}"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+
     <script>
         $(document).ready(function (){
 

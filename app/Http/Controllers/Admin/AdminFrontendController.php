@@ -220,7 +220,7 @@ class AdminFrontendController extends Controller
             $imageName = uniqid().'.'."jpg";
             $directory = 'assets/admin/images/adds/';
             $imgUrl1  = $directory.$imageName;
-            Image::make($image)->resize(380,848)->save($imgUrl1);
+            Image::make($image)->resize(262,88)->save($imgUrl1);
             $adds->add_image_one = $imgUrl1;
         }
 
@@ -230,7 +230,7 @@ class AdminFrontendController extends Controller
             $imageName = uniqid().'.'."jpg";
             $directory = 'assets/admin/images/adds/';
             $imgUrl2  = $directory.$imageName;
-            Image::make($image)->resize(380,848)->save($imgUrl2);
+            Image::make($image)->resize(262,300)->save($imgUrl2);
             $adds->add_image_two = $imgUrl2;
         }
 
@@ -240,7 +240,7 @@ class AdminFrontendController extends Controller
             $imageName = uniqid().'.'."jpg";
             $directory = 'assets/admin/images/adds/';
             $imgUrl3  = $directory.$imageName;
-            Image::make($image)->resize(380,848)->save($imgUrl3);
+            Image::make($image)->resize(446,185)->save($imgUrl3);
             $adds->add_image_three = $imgUrl3;
         }
 
@@ -250,7 +250,7 @@ class AdminFrontendController extends Controller
             $imageName = uniqid().'.'."jpg";
             $directory = 'assets/admin/images/adds/';
             $imgUrl4  = $directory.$imageName;
-            Image::make($image)->resize(380,848)->save($imgUrl4);
+            Image::make($image)->resize(400,185)->save($imgUrl4);
             $adds->add_image_four = $imgUrl4;
         }
 

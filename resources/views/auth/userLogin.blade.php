@@ -13,60 +13,78 @@
         <!-- /.container -->
     </div>
 
-    <div class="body-content">
+    <div class="body-content" style="margin-top: -40px;">
         <div class="container">
-            <div class="sign-in-page">
-                <div class="row">
-                    <!-- Sign-in -->
-                    <div class="col-md-6 col-sm-6 sign-in col-lg-offset-3">
-                        <h4 class="">Sign in</h4>
-                        <p class="">Hello, Welcome to your account.</p>
-                        @if (Session::has('ac_ac_error'))
-                            <p class="text-success">{{Session::get('ac_ac_error')}}</p>
+            <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="{{route('forgot.password')}}">Forgot password?</a></div>
+                    </div>
 
-                        @endif
-                        <form class="register-form outer-top-xs" role="form" action="{{route('login')}}" method="post">
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <form id="loginform" class="form-horizontal" role="form" action="{{route('login')}}" method="post">
                             @csrf
-                            <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-                                <input type="email" name="email" class="form-control unicase-form-control text-input @error('email') is-invalid @enderror" value="{{ old('email') }}" id="exampleInputEmail1" >
+
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="far fa-envelope"></i></span>
+                                <input id="login-username" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong class="text-danger">{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-                                <input type="password" name="password" class="form-control unicase-form-control text-input @error('email') is-invalid @enderror" id="exampleInputPassword1" >
+
+
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="fas fa-lock"></i></span>
+                                <input id="login-password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong class="text-danger">{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="radio outer-xs">
-                                <a href="{{route('forgot.password')}}" class="forgot-password pull-right">Forgot your Password?</a>
-                            </div>
-                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
 
-                            <p class="text-right" style="margin-top: -20px;">Dont have an account ?<a href="{{route('register')}}"> Create Here</a></p>
-                            {{--                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button pull-right">Register</button>--}}
+
+                            <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+
+                                <div class="col-sm-12 controls">
+                                    <button class="btn btn-success btn-black btn-block">Login</button>
+                                    <br>
+                                    <br>
+                                    <div class="col-md-6">
+                                        <a id="btn-fblogin" href="{{ url('/auth/redirect/facebook') }}"><button class="btn btn-primary btn-block"><i class="fab fa-facebook-square"></i> Login with Facebook</button></a>
+                                    </div>  <div class="col-md-6">
+                                        <a id="btn-fblogin" href="{{ url('/auth/redirect/google') }}"><button class="btn btn-primary btn-block"><i class="fab fa-google-plus-square"></i> Login with Google</button></a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-12 control">
+                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                        Don't have an account!
+                                        <a href="{{route('register')}}">
+                                            Sign Up Here
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
 
 
-                        <div class="social-sign-in outer-top-xs text-center">
-                            <a href="{{ url('/auth/redirect/facebook') }}" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
-                            <a href="{{ url('/auth/redirect/google') }}" class="twitter-sign-in"><i class="fa fa-google"></i> Sign In with Google</a>
-                        </div>
 
                     </div>
-                    <!-- Sign-in -->
-                    <!-- create a new account -->
-
-                    <!-- create a new account -->
                 </div>
-                <!-- /.row -->
             </div>
             <!-- /.sigin-in-->
             <br>

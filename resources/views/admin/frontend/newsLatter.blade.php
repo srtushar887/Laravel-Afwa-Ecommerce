@@ -7,11 +7,33 @@
                 <h4 class="mb-0 font-size-18">News Latter</h4>
 
                 <div class="page-title-right">
-                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#sendnewslatter">Send Mail To All</button>
+
                 </div>
 
             </div>
         </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form class="needs-validation" novalidate="" action="{{route('admin.send.newslatter')}}" method="post">
+                        @csrf
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationCustom01">News Latter Message</label>
+                                <textarea type="text" cols="6" rows="10" name="newsmessage" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary waves-effect waves-light" type="submit">Send To All</button>
+                    </form>
+
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col -->
     </div>
 
 
@@ -66,7 +88,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Category Name</label>
-                            <textarea type="text" class="form-control" id="summary-ckeditor-newlatter" name="newsmessage"></textarea>
+                            <textarea type="text" class="form-control" name="newsmessage"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -87,8 +109,7 @@
 
 
 @section('js')
-    <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'summary-ckeditor-newlatter' );
-    </script>
+    <script type="text/javascript" src="{{asset('assets/admin/js/nicEdit-latest.js')}}"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
 @stop
